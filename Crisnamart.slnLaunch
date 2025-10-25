@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "APi+Client",
+    "Projects": [
+      {
+        "Path": "Crisnamart.Api\\Crisnamart.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Crisnamart.BlazorClient\\Crisnamart.BlazorClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
