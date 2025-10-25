@@ -1,0 +1,6 @@
+@Crisnamart.Api_HostAddress = http://localhost:5017
+
+GET {{Crisnamart.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
