@@ -4,34 +4,34 @@
 <h3>Catálogo de Productos</h3>
 
 @if (productos == null) {
-    <p>Cargando productos...</p>
+	<p>Cargando productos...</p>
 } else {
-    <div class="row">
-        @foreach (var p in productos) {
-            <div class="col-3 mb-4">
-                <div class="card">
-                    <img src="@($"images/{System.IO.Path.GetFileName(p.Ruta)}")" class="card-img-top" />
-                    <div class="card-body">
-                        <h6>@p.Descripcion</h6>
-                        <small>@p.CodigoUnico</small>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
+	<div class="row">
+		@foreach (var p in productos) {
+			<div class="col-3 mb-4">
+				<div class="card">
+					<img src="@Uri.EscapeUriString(p.Ruta)" class="card-img-top" />
+					<div class="card-body">
+						<h6>@p.Descripcion</h6>
+						<small>@p.CodigoUnico</small>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
 }
 
 @code {
-    private List<Producto>? productos;
+	private List<Producto>? productos;
 
-    protected override async Task OnInitializedAsync() {
-        var http = HttpClientFactory.CreateClient("ApiClient");
-        productos = await http.GetFromJsonAsync<List<Producto>>("api/productos");
-    }
+	protected override async Task OnInitializedAsync() {
+		var http = HttpClientFactory.CreateClient("ApiClient");
+		productos = await http.GetFromJsonAsync<List<Producto>>("api/productos");
+	}
 
-    public class Producto {
-        public string CodigoUnico { get; set; } = "";
-        public string Ruta { get; set; } = "";
-        public string Descripcion { get; set; } = "";
-    }
+	public class Producto {
+		public string CodigoUnico { get; set; } = "";
+		public string Ruta { get; set; } = "";
+		public string Descripcion { get; set; } = "";
+	}
 }
