@@ -7,10 +7,10 @@
 	<p>Cargando productos...</p>
 } else {
 	<div class="row">
-		@foreach (var p in productos) {
+		@foreach (Producto p in productos) {
 			<div class="col-3 mb-4">
 				<div class="card">
-					<img src="@Uri.EscapeUriString(p.Ruta)" class="card-img-top" />
+					<img src="@p.BrowserUrl" class="card-img-top" />
 					<div class="card-body">
 						<h6>@p.Descripcion</h6>
 						<small>@p.CodigoUnico</small>
@@ -33,5 +33,12 @@
 		public string CodigoUnico { get; set; } = "";
 		public string Ruta { get; set; } = "";
 		public string Descripcion { get; set; } = "";
+		public string BrowserUrl {
+			get {
+				var segments = Ruta.Split('/', '\\'); // handle both separators
+				var encodedSegments = segments.Select(Uri.EscapeDataString);
+				return "/images/" + string.Join("/", encodedSegments);
+			}
+		}
 	}
 }
