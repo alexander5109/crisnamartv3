@@ -11,17 +11,18 @@
 } else {
 	<div class="row">
 		@foreach (var p in productos) {
-			<div class="col-3 mb-4">
-				<div class="card">
+			<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+				<div class="card shadow-sm h-100">
 					<img src="@GetImageUrl(p.Ruta)" class="card-img-top" alt="@p.Descripcion" />
-					<div class="card-body">
-						<h6>@p.Descripcion</h6>
-						<small>@p.CodigoUnico</small>
+					<div class="card-body text-center">
+						<h6 class="card-title">@p.Descripcion</h6>
+						<small class="text-muted">@p.CodigoUnico</small>
 					</div>
 				</div>
 			</div>
 		}
 	</div>
+
 }
 
 @code {
