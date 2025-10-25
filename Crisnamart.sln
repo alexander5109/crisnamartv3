@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.Api", "Crisnamart.Api\Crisnamart.Api.csproj", "{9B89C93C-EE54-4F02-AC95-E481E2A3C484}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.BlazorClient", "Crisnamart.BlazorClient\Crisnamart.BlazorClient.csproj", "{CB704603-9585-4624-BABE-6AF73CF9E787}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9B89C93C-EE54-4F02-AC95-E481E2A3C484} = {9B89C93C-EE54-4F02-AC95-E481E2A3C484}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.DB.Runner", "Crisnamart.DB.Runner\Crisnamart.DB.Runner.csproj", "{C60A6A95-7630-468A-B030-0EC85369BC8C}"
 EndProject
@@ -72,5 +75,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2655A3F5-718A-4BB6-AFA8-D5EC42A31D9E}
 	EndGlobalSection
 EndGlobal
