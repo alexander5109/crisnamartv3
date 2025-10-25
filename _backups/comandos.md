@@ -1,4 +1,4 @@
-
+CREATE DATABASE crisnamart3;
 
 CREATE TABLE Productos (
     Id INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,6 +39,15 @@ dotnet add Crisnamart.Api package Swashbuckle.AspNetCore
 dotnet add Crisnamart.BlazorClient package Microsoft.AspNetCore.Components.Web
 dotnet add Crisnamart.BlazorClient package Microsoft.AspNetCore.Components.WebAssembly
 
-  "ConnectionStrings": {
-    "MySql": "Server=localhost;Database=crisnamart;User=root;Password=root;SslMode=None;"
-  }
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "AllowedHosts": "*",
+    "ConnectionStrings": {
+        "MySql": "Server=[PORT/LOCALHOST];Database=[DATABASE];User=[USER];Password=[PASS];SslMode=None;"
+    }
+}
