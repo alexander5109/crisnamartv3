@@ -1,3 +1,18 @@
+<!-- footer -->
+@code {
+	// Esto lo podrías cargar desde OnInitializedAsync() o inyectando un servicio
+	private List<string> Categorias = new List<string>
+	{
+		"Artículos de Cocina",
+		"Vajilla y Cubiertos",
+		"Pavas, Cafeteras y Teteras",
+		"Hogar y Organización",
+		"Decoración y Ambientación",
+		"Jardín y Camping",
+		"Mascotas y Cuidado"
+	};
+}
+
 <header>
 	<!-- navbar -->
 	<div class="border-b">
@@ -213,8 +228,7 @@
 				<div class="offcanvas offcanvas-left lg:visible" tabindex="-1" id="navbar-default">
 					<div class="offcanvas-header pb-1">
 						@* <a href="index.html"><img src="images/logo/freshcart-logo.svg"  *@
-						<a 
-							href="index.html">
+						<a href="index.html">
 							<img src="images/LOGO_CRISNAMART/LOGO_horizontal.png" alt="TailwindCSS eCommerce HTML Template" />
 						</a>
 
@@ -265,7 +279,7 @@
 										<path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
 									</svg>
 								</span>
-								All Departments
+								Categorias
 							</a>
 							<div class="collapse mt-2" id="collapseExample">
 								<div class="card card-body">
@@ -296,16 +310,12 @@
 										<path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
 									</svg>
 								</span>
-								All Departments
+								Categorias
 							</button>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#!">Dairy, Bread & Eggs</a></li>
-								<li><a class="dropdown-item" href="#!">Snacks & Munchies</a></li>
-								<li><a class="dropdown-item" href="#!">Fruits & Vegetables</a></li>
-								<li><a class="dropdown-item" href="#!">Cold Drinks & Juices</a></li>
-								<li><a class="dropdown-item" href="#!">Breakfast & Instant Food</a></li>
-								<li><a class="dropdown-item" href="#!">Bakery & Biscuits</a></li>
-								<li><a class="dropdown-item" href="#!">Chicken, Meat & Fish</a></li>
+								@foreach (var category in Categorias) {
+									<li><a class="dropdown-item" href="#!">@category</a></li>
+								}
 							</ul>
 						</div>
 						<div>
@@ -348,8 +358,7 @@
 
 								<li class="nav-item dropdown w-full lg:w-auto dropdown-fullwidth">
 									<a class="nav-link " href="#!">
-										Mega
-										menu
+										Quienes somos
 									</a>
 
 								</li>
