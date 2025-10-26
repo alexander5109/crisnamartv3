@@ -1,20 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="d-flex flex-column min-vh-100">
 
-	<!-- Top navbar -->
-	<NavBar />
+<!-- Top navbar -->
+<Crisnamart.BlazorClient.Components.Partials.NavBar />
 
-	<!-- Main content -->
-	<main class="flex-grow-1 container mt-4">
+<!-- Main content -->
+<main class="flex-grow-1 container mt-4">
 		@Body
 	</main>
 
-	<!-- Footer -->
-	<footer class="bg-light text-center py-3 mt-auto">
-		&copy; @DateTime.Now.Year Crisnamart. Todos los derechos reservados.
-	</footer>
-</div>
+
+<Crisnamart.BlazorClient.Components.Partials.Footer />
+
+
 
 <div id="blazor-error-ui">
 	An unhandled error has occurred.
