@@ -1,6 +1,8 @@
-﻿@page "/home-productos-populares"
+﻿@code {
+	[Parameter]
+	public List<Domain.LocalProduct> ProductosPopulares { get; set; } = new();
+}
 
-<h3>PopularProducts</h3>
 
 <section class="lg:my-14 my-8">
 	<div class="container">
@@ -11,8 +13,7 @@
 		</div>
 
 		<div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:gap-4 xl:grid-cols-5">
-			@foreach (var product in PopularProducts)
-			{
+			@foreach (var product in ProductosPopulares) {
 				<div class="relative rounded-lg break-words border bg-white border-gray-300 card-product">
 					<div class="flex-auto p-4">
 						<div class="text-center relative flex justify-center">
@@ -82,28 +83,3 @@
 		</div>
 	</div>
 </section>
-
-@code {
-	// Local model used only on this page
-	private record LocalProduct
-	{
-		public int Id { get; init; }
-		public string Title { get; init; } = string.Empty;
-		public string Category { get; init; } = string.Empty;
-		public string ImageUrl { get; init; } = string.Empty;
-		public decimal Price { get; init; }
-		public decimal? OldPrice { get; init; }
-		public double Rating { get; init; }
-		public int RatingCount { get; init; }
-		public string? Badge { get; init; }
-	}
-
-	private List<LocalProduct> PopularProducts { get; set; } = new()
-	{
-		new LocalProduct { Id = 1, Title = "Haldiram's Sev Bhujia", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-1.jpg", Price = 18, OldPrice = 24, Rating = 4.5, RatingCount = 149, Badge = "Sale" },
-		new LocalProduct { Id = 2, Title = "NutriChoice Digestive", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-2.jpg", Price = 24, Rating = 4.5, RatingCount = 25, Badge = "14%" },
-		new LocalProduct { Id = 3, Title = "Cadbury 5 Star Chocolate", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-3.jpg", Price = 32, OldPrice = 35, Rating = 5, RatingCount = 469 },
-		new LocalProduct { Id = 4, Title = "Onion Flavour Potato", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-4.jpg", Price = 3, OldPrice = 5, Rating = 3.5, RatingCount = 456, Badge = "Hot" },
-		new LocalProduct { Id = 5, Title = "Salted Instant Popcorn", Category = "Instant Food", ImageUrl = "images/products/product-img-5.jpg", Price = 13, OldPrice = 18, Rating = 4.5, RatingCount = 39 }
-	};
-}

@@ -2,6 +2,59 @@
 
 public static class PrototipoContenido {
 
+	public static List<Domain.PromocionModel> PromocionModelos = new(){
+		new()   {
+			Titulo = "Merca y Falopa",
+			Descuento = 30,
+			ImagenUrl = "images/banner/grocery-banner.png",
+			Link = "#!",
+			TextoBoton = "Encargar ahora!"
+		},
+		new()
+		{
+			Titulo = "Faso",
+			Descuento = 25,
+			ImagenUrl = "images/banner/grocery-banner-2.jpg",
+			Link = "#!",
+			TextoBoton = "Hace tu pedido ya!"
+		}
+	};
+
+
+	public static List<Domain.SlidePromocionalModel> SlidePromocionalModels = new(){
+		new()
+		{
+			ImagenUrl = "images/slider/slide-1.jpg",
+			Subtitulo = "Opening Sale Discount 50%",
+			TituloHtml = "SuperMarket<br/>For Fresh Grocery",
+			Descripcion = "Introduced a new model for online grocery shopping and convenient home delivery.",
+			TextoBoton = "Shop Now",
+			Link = "#!"
+		},
+		new()
+		{
+			ImagenUrl = "images/slider/slider-2.jpg",
+			Subtitulo = "Free Shipping - orders over $100",
+			TituloHtml = "Free Shipping on<br/>orders over <span class='text-green-600'>$100</span>",
+			Descripcion = "Free Shipping to First-Time Customers Only, after promotions and discounts are applied.",
+			TextoBoton = "Shop Now",
+			Link = "#!"
+		}
+	};
+
+
+
+	public static List<LocalProduct> ProductosPopulares { get; set; } = new()
+	{
+		new LocalProduct { Id = 1, Title = "Haldiram's Sev Bhujia", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-1.jpg", Price = 18, OldPrice = 24, Rating = 4.5, RatingCount = 149, Badge = "Sale" },
+		new LocalProduct { Id = 2, Title = "NutriChoice Digestive", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-2.jpg", Price = 24, Rating = 4.5, RatingCount = 25, Badge = "14%" },
+		new LocalProduct { Id = 3, Title = "Cadbury 5 Star Chocolate", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-3.jpg", Price = 32, OldPrice = 35, Rating = 5, RatingCount = 469 },
+		new LocalProduct { Id = 4, Title = "Onion Flavour Potato", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-4.jpg", Price = 3, OldPrice = 5, Rating = 3.5, RatingCount = 456, Badge = "Hot" },
+		new LocalProduct { Id = 5, Title = "Salted Instant Popcorn", Category = "Instant Food", ImageUrl = "images/products/product-img-5.jpg", Price = 13, OldPrice = 18, Rating = 4.5, RatingCount = 39 }
+	};
+
+
+
 	public static List<PromocionModel> ObtenerPromociones() => [
 		new PromocionModel {
 			Titulo = "Merca y Falopa",

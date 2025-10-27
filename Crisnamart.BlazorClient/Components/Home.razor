@@ -3,56 +3,10 @@
 
 
 <HomeCategoriasDestacados Categorias="@Domain.PrototipoContenido.CategoriasDestacadas" />
-<HomeSliderPromocional Slides="@slides" />
-<HomePromocion Promociones="@promos" />
-<HomeProductosPopulares />
+<HomeSliderPromocional Slides="@Domain.PrototipoContenido.SlidePromocionalModels" />
+<HomePromocion Promociones="@Domain.PrototipoContenido.PromocionModelos" />
+<HomeProductosPopulares ProductosPopulares="@Domain.PrototipoContenido.ProductosPopulares" />
 <HomeDailyBestSells />
 <HomePropuestaDeValor Propuestas="@Domain.PrototipoContenido.PropuestasDeValor" />
 <HomeModalProduct />
-
-
-@code {
-	private List<Domain.PromocionModel> promos = new(){
-		new()   {
-			Titulo = "Merca y Falopa",
-			Descuento = 30,
-			ImagenUrl = "images/banner/grocery-banner.png",
-			Link = "#!",
-			TextoBoton = "Encargar ahora!"
-		},
-		new()
-		{
-			Titulo = "Faso",
-			Descuento = 25,
-			ImagenUrl = "images/banner/grocery-banner-2.jpg",
-			Link = "#!",
-			TextoBoton = "Hace tu pedido ya!"
-		}
-	};
-
-
-	private List<Domain.SlidePromocionalModel> slides = new(){
-		new()
-		{
-			ImagenUrl = "images/slider/slide-1.jpg",
-			Subtitulo = "Opening Sale Discount 50%",
-			TituloHtml = "SuperMarket<br/>For Fresh Grocery",
-			Descripcion = "Introduced a new model for online grocery shopping and convenient home delivery.",
-			TextoBoton = "Shop Now",
-			Link = "#!"
-		},
-		new()
-		{
-			ImagenUrl = "images/slider/slider-2.jpg",
-			Subtitulo = "Free Shipping - orders over $100",
-			TituloHtml = "Free Shipping on<br/>orders over <span class='text-green-600'>$100</span>",
-			Descripcion = "Free Shipping to First-Time Customers Only, after promotions and discounts are applied.",
-			TextoBoton = "Shop Now",
-			Link = "#!"
-		}
-	};
-
-
-
-}
 

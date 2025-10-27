@@ -1,5 +1,20 @@
 ﻿namespace Crisnamart.Domain;
 
+
+
+// Local model used only on this page
+public record LocalProduct {
+	public int Id { get; init; }
+	public string Title { get; init; }
+	public string Category { get; init; }
+	public string ImageUrl { get; init; }
+	public decimal Price { get; init; }
+	public decimal? OldPrice { get; init; }
+	public double Rating { get; init; }
+	public int RatingCount { get; init; }
+	public string? Badge { get; init; }
+	}
+
 public record PromocionModel {
 	public required string Titulo { get; init; }
 	public required	int Descuento { get; init; }
