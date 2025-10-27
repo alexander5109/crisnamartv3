@@ -4,20 +4,20 @@
 
 // Local model used only on this page
 public record LocalProduct {
-	public int Id { get; init; }
-	public string Title { get; init; }
-	public string Category { get; init; }
-	public string ImageUrl { get; init; }
-	public decimal Price { get; init; }
-	public decimal? OldPrice { get; init; }
-	public double Rating { get; init; }
-	public int RatingCount { get; init; }
-	public string? Badge { get; init; }
-	}
+	public required int Id { get; init; }
+	public required string Title { get; init; }
+	public required string Category { get; init; }
+	public required string ImageUrl { get; init; }
+	public required decimal Price { get; init; }
+	public required decimal? OldPrice { get; init; }
+	public required double Rating { get; init; }
+	public required int RatingCount { get; init; }
+	public required string? Badge { get; init; }
+}
 
 public record PromocionModel {
 	public required string Titulo { get; init; }
-	public required	int Descuento { get; init; }
+	public required int Descuento { get; init; }
 	public required string ImagenUrl { get; init; }
 	public required string Link { get; init; }
 	public required string TextoBoton { get; init; }
@@ -44,3 +44,53 @@ public record CategoriaModel {
 	public required string ImagenUrl { get; init; }
 	public required string Link { get; init; }
 }
+
+public record ProductDetailsModel {
+	public required int Id { get; init; }
+	public required string Title { get; init; }
+	public string? Category { get; init; }
+	public required string Description { get; init; }
+	public required decimal Price { get; init; }
+	public decimal? OldPrice { get; init; }
+	public double Rating { get; init; }
+	public int RatingCount { get; init; }
+	public string? Badge { get; init; }
+	public required List<string> ImageUrls { get; init; }
+	public required string ProductCode { get; init; }
+	public string Availability { get; init; } = "En stock";
+	public string Type { get; init; } = "";
+	public string ShippingInfo { get; init; } = "";
+	public string? Link { get; init; }
+}
+
+public record ProductCardModel {
+	public required int Id { get; init; }
+	public required string Title { get; init; }
+	public string? Category { get; init; }
+	public required string ImageUrl { get; init; }
+	public required decimal Price { get; init; }
+	public decimal? OldPrice { get; init; }
+	public double Rating { get; init; }
+	public int RatingCount { get; init; }
+	public string? Badge { get; init; }
+	public string? Link { get; init; }
+	public DateTime? DealEndsAt { get; init; }
+}
+
+public record PromoBannerModel {
+	public required string Title { get; init; }
+	public required string Description { get; init; }
+	public required string ImageUrl { get; init; }
+	public required string ButtonText { get; init; }
+	public string? Link { get; init; }
+}
+
+
+
+
+
+
+
+
+
+
