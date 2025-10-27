@@ -1,10 +1,92 @@
 ﻿@page "/home-productos-populares"
 
+<h3>PopularProducts</h3>
 
+<section class="lg:my-14 my-8">
+	<div class="container">
+		<div class="flex flex-wrap">
+			<div class="w-full mb-6">
+				<h2 class="text-lg">Más vendidos</h2>
+			</div>
+		</div>
+
+		<div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:gap-4 xl:grid-cols-5">
+			@foreach (var product in PopularProducts)
+			{
+				<div class="relative rounded-lg break-words border bg-white border-gray-300 card-product">
+					<div class="flex-auto p-4">
+						<div class="text-center relative flex justify-center">
+							@if (!string.IsNullOrWhiteSpace(product.Badge))
+							{
+								<div class="absolute top-0 left-0">
+									<span class="inline-block p-1 text-center font-semibold text-sm align-baseline leading-none rounded bg-red-600 text-white">@product.Badge</span>
+								</div>
+							}
+
+							<a href="#">
+								<img src="@product.ImageUrl" alt="@product.Title" class="w-full h-auto" />
+							</a>
+
+							<div class="absolute w-full bottom-[15%] opacity-0 invisible card-product-action">
+								<button type="button" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white"
+										data-bs-toggle="tooltip" data-bs-html="true" title="Quick View" aria-label="Quick View">
+									<i class="bi bi-eye"></i>
+								</button>
+								<button type="button" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white"
+										data-bs-toggle="tooltip" data-bs-html="true" title="Wishlist" aria-label="Wishlist">
+									<i class="bi bi-heart"></i>
+								</button>
+								<button type="button" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white"
+										data-bs-toggle="tooltip" data-bs-html="true" title="Compare" aria-label="Compare">
+									<i class="bi bi-arrow-left-right"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="flex flex-col gap-3">
+							<a href="#" class="text-decoration-none text-gray-500"><small>@product.Category</small></a>
+							<div class="flex flex-col gap-2">
+								<h3 class="text-base truncate"><a href="#">@product.Title</a></h3>
+								<div class="flex items-center">
+									<div class="flex flex-row gap-3">
+										<small class="text-yellow-500 flex items-center">
+											<StarRating Value="@product.Rating" Size="14px" FilledColor="#f59e0b" />
+										</small>
+										<div class="flex flex-row gap-1">
+											<span class="text-gray-500 text-sm">@product.Rating</span>
+											<span class="text-gray-500 text-sm">(@product.RatingCount)</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flex justify-between items-center">
+								<div>
+									<span class="text-gray-900 font-semibold">$@product.Price</span>
+									@if (product.OldPrice.HasValue)
+									{
+										<span class="line-through text-gray-500">$@product.OldPrice</span>
+									}
+								</div>
+								<div>
+									<button type="button" class="btn inline-flex items-center gap-x-1 bg-green-600 text-white border-green-600 btn-sm">
+										<i class="bi bi-plus-lg"></i>
+										<span>Add</span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</section>
 
 @code {
-	// Local model used only on this page to avoid cross-namespace issues
-	private record LocalProduct {
+	// Local model used only on this page
+	private record LocalProduct
+	{
 		public int Id { get; init; }
 		public string Title { get; init; } = string.Empty;
 		public string Category { get; init; } = string.Empty;
@@ -16,92 +98,12 @@
 		public string? Badge { get; init; }
 	}
 
-	private List<LocalProduct> popularProducts { get; set; } = new(){
-	 new LocalProduct { Id =1, Title = "Haldiram's Sev Bhujia", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-1.jpg", Price =18, OldPrice =24, Rating =4.5, RatingCount =149, Badge = "Sale" },
-	 new LocalProduct { Id =2, Title = "NutriChoice Digestive", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-2.jpg", Price =24, Rating =4.5, RatingCount =25, Badge = "14%" },
-	 new LocalProduct { Id =3, Title = "Cadbury5 Star Chocolate", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-3.jpg", Price =32, OldPrice =35, Rating =5, RatingCount =469 },
-	 new LocalProduct { Id =4, Title = "Onion Flavour Potato", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-4.jpg", Price =3, OldPrice =5, Rating =3.5, RatingCount =456, Badge = "Hot" },
-	 new LocalProduct { Id =5, Title = "Salted Instant Popcorn", Category = "Instant Food", ImageUrl = "images/products/product-img-5.jpg", Price =13, OldPrice =18, Rating =4.5, RatingCount =39 }
-	 };
+	private List<LocalProduct> PopularProducts { get; set; } = new()
+	{
+		new LocalProduct { Id = 1, Title = "Haldiram's Sev Bhujia", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-1.jpg", Price = 18, OldPrice = 24, Rating = 4.5, RatingCount = 149, Badge = "Sale" },
+		new LocalProduct { Id = 2, Title = "NutriChoice Digestive", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-2.jpg", Price = 24, Rating = 4.5, RatingCount = 25, Badge = "14%" },
+		new LocalProduct { Id = 3, Title = "Cadbury 5 Star Chocolate", Category = "Bakery & Biscuits", ImageUrl = "images/products/product-img-3.jpg", Price = 32, OldPrice = 35, Rating = 5, RatingCount = 469 },
+		new LocalProduct { Id = 4, Title = "Onion Flavour Potato", Category = "Snack & Munchies", ImageUrl = "images/products/product-img-4.jpg", Price = 3, OldPrice = 5, Rating = 3.5, RatingCount = 456, Badge = "Hot" },
+		new LocalProduct { Id = 5, Title = "Salted Instant Popcorn", Category = "Instant Food", ImageUrl = "images/products/product-img-5.jpg", Price = 13, OldPrice = 18, Rating = 4.5, RatingCount = 39 }
+	};
 }
-
-<h3>Productos populares</h3>
-
-<section class="lg:my-14 my-8">
-	<div class="container">
-		<div class="flex flex-wrap">
-			<div class="w-full mb-6">
-				<h2 class="text-lg">Más vendidos</h2>
-			</div>
-		</div>
-
-		<div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:gap-4 xl:grid-cols-5">
-			@foreach (var product in popularProducts) {
-				<div class="relative rounded-lg break-words border bg-white border-gray-300 card-product">
-					<div class="flex-auto p-4">
-						<div class="text-center relative flex justify-center">
-							@if (!string.IsNullOrWhiteSpace(product.Badge)) {
-								<div class="absolute top-0 left-0">
-									<span class="inline-block p-1 text-center font-semibold text-sm align-baseline leading-none rounded bg-red-600 text-white">@product.Badge</span>
-								</div>
-							}
-
-							<a href="#">
-								<img src="@product.ImageUrl" alt="@product.Title" class="w-full h-auto" />
-							</a>
-
-							<div class="absolute w-full bottom-[15%] opacity-0 invisible card-product-action">
-								<a href="#" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white" title="Quick View">
-									<!-- simplified icon -->
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="002424" fill="none" stroke="currentColor"><path d="M112s4-811-8118118-48-118S112112z" stroke-width="1.5" /><circle cx="12" cy="12" r="3" stroke-width="1.5" /></svg>
-								</a>
-								<a href="#" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white" title="Wishlist">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="002424" fill="none" stroke="currentColor"><path d="M20.84.6a5.55.5000-7.80L125.6l-1-1a5.55.5010-7.87.8L1222l8.8-8.6a5.55.50000-7.8z" stroke-width="1.2" /></svg>
-								</a>
-								<a href="#" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white" title="Compare">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="002424" fill="none" stroke="currentColor"><path d="M710h14l-4-4" stroke-width="1.5" /><path d="M1714H3l44" stroke-width="1.5" /></svg>
-								</a>
-							</div>
-						</div>
-
-						<div class="flex flex-col gap-3">
-							<a href="#" class="text-decoration-none text-gray-500"><small>@product.Category</small></a>
-							<div class="flex flex-col gap-2">
-								<h3 class="text-base truncate"><a href="#">@product.Title</a></h3>
-								<div class="flex items-center">
-									<div class="flex flex-row gap-3">
-										<small class="text-yellow-500 flex items-center">
-											@for (int i = 0; i < (int)Math.Floor(product.Rating); i++) {
-												<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="002424" fill="currentColor"><path d="M12 .587l3.6687.431L249.748l-65.853L19.335241219.8974.66524615.60109.748l8.332-1.73z" /></svg>
-											}
-										</small>
-										<div class="flex flex-row gap-1">
-											<span class="text-gray-500 text-sm">@product.Rating</span>
-											<span class="text-gray-500 text-sm">(@product.RatingCount)</span>
-										</div>
-									</div>
-								</div>
-
-								<div class="flex justify-between items-center">
-									<div>
-										<span class="text-gray-900 font-semibold">$@product.Price</span>
-										@if (product.OldPrice.HasValue) {
-											<span class="line-through text-gray-500">$@product.OldPrice</span>
-										}
-									</div>
-									<div>
-										<button type="button" class="btn inline-flex items-center gap-x-1 bg-green-600 text-white border-green-600 btn-sm">
-											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="002424" fill="none" stroke="currentColor"><path d="M125v14M512h14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
-											<span>Add</span>
-										</button>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			}
-		</div>
-	</div>
-</section>
