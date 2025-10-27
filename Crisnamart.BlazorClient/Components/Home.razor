@@ -2,6 +2,15 @@
 <PageTitle>Crisnamart - 2026</PageTitle>
 
 
+<HomeCategoriasDestacados Categorias="@Domain.PrototipoContenido.CategoriasDestacadas" />
+<HomeSliderPromocional Slides="@slides" />
+<HomePromocion Promociones="@promos" />
+<HomeProductosPopulares />
+<HomeDailyBestSells />
+<HomePropuestaDeValor Propuestas="@Domain.PrototipoContenido.PropuestasDeValor" />
+<HomeModalProduct />
+
+
 @code {
 	private List<Domain.PromocionModel> promos = new(){
 		new()   {
@@ -44,31 +53,6 @@
 	};
 
 
-	private List<Domain.CategoriaDestacadaModel> categorias = new()
-	{
-		new() { Nombre = "Dairy, Bread & Eggs", ImagenUrl = "images/category/category-dairy-bread-eggs.jpg", Link = "#!" },
-		new() { Nombre = "Snack & Munchies", ImagenUrl = "images/category/category-snack-munchies.jpg", Link = "#!" },
-		new() { Nombre = "Bakery & Biscuits", ImagenUrl = "images/category/category-bakery-biscuits.jpg", Link = "#!" },
-		new() { Nombre = "Instant Food", ImagenUrl = "images/category/category-instant-food.jpg", Link = "#!" },
-		new() { Nombre = "Tea, Coffee & Drinks", ImagenUrl = "images/category/category-tea-coffee-drinks.jpg", Link = "#!" },
-		new() { Nombre = "Atta, Rice & Dal", ImagenUrl = "images/category/category-atta-rice-dal.jpg", Link = "#!" },
-		new() { Nombre = "Baby Care", ImagenUrl = "images/category/category-baby-care.jpg", Link = "#!" },
-		new() { Nombre = "Chicken, Meat & Fish", ImagenUrl = "images/category/category-chicken-meat-fish.jpg", Link = "#!" },
-		new() { Nombre = "Cleaning Essentials", ImagenUrl = "images/category/category-cleaning-essentials.jpg", Link = "#!" },
-		new() { Nombre = "Pet Care", ImagenUrl = "images/category/category-pet-care.jpg", Link = "#!" },
-	};
-
 
 }
-
-
-
-<HomeCategoriasDestacados Titulo="Featured Categories" Categorias="@categorias" />
-
-<HomeSliderPromocional Slides="@slides" />
-<HomePromocion Promociones="@promos" />
-<HomeProductosPopulares />
-<HomeDailyBestSells />
-<HomePropuestaDeValor />
-<HomeModalProduct />
 

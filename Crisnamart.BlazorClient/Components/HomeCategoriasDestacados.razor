@@ -1,4 +1,12 @@
-﻿@* Components/CategoriasDestacadas.razor *@
+﻿@code {
+    public string Titulo = "Categorias destacadas";
+
+    [Parameter]
+    public List<Domain.CategoriaModel> Categorias { get; set; } = new();
+}
+
+
+
 <section class="mt-8">
     <div class="container">
         <div class="flex flex-wrap">
@@ -44,11 +52,3 @@
         </div>
     </div>
 </section>
-
-@code {
-    [Parameter]
-    public string Titulo { get; set; } = "Featured Categories";
-
-    [Parameter]
-    public List<Domain.CategoriaDestacadaModel> Categorias { get; set; } = new();
-}

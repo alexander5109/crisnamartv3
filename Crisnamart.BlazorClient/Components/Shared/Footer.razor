@@ -1,16 +1,7 @@
 <!-- footer -->
 @code {
-    // Esto lo podrías cargar desde OnInitializedAsync() o inyectando un servicio
-	private List<string> Categorias = new List<string>
-    {
-        "Artículos de Cocina",
-        "Vajilla y Cubiertos",
-        "Pavas, Cafeteras y Teteras",
-        "Hogar y Organización",
-        "Decoración y Ambientación",
-        "Jardín y Camping",
-        "Mascotas y Cuidado"
-    };
+    [Parameter]
+	public List<Domain.CategoriaModel> Categorias { get; set; } = new();
 }
 
 
@@ -23,14 +14,14 @@
 					<div class="w-1/2">
 						<ul class="flex flex-col gap-2">
 							@foreach (var category in Categorias.Take(Categorias.Count / 2 + Categorias.Count % 2)) {
-								<li><a href="#!" class="inline-block hover:text-green-600">@category</a></li>
+								<li><a href="#!" class="inline-block hover:text-green-600">@category.Nombre</a></li>
 							}
 						</ul>
 					</div>
 					<div class="w-1/2">
 						<ul class="flex flex-col gap-2">
 							@foreach (var category in Categorias.Skip(Categorias.Count / 2 + Categorias.Count % 2)) {
-								<li><a href="#!" class="inline-block hover:text-green-600">@category</a></li>
+								<li><a href="#!" class="inline-block hover:text-green-600">@category.Nombre</a></li>
 							}
 						</ul>
 					</div>

@@ -1,17 +1,9 @@
 <!-- footer -->
 @code {
-	// Esto lo podrías cargar desde OnInitializedAsync() o inyectando un servicio
-	private List<string> Categorias = new List<string>
-	{
-		"Artículos de Cocina",
-		"Vajilla y Cubiertos",
-		"Pavas, Cafeteras y Teteras",
-		"Hogar y Organización",
-		"Decoración y Ambientación",
-		"Jardín y Camping",
-		"Mascotas y Cuidado"
-	};
+	[Parameter]
+	public List<Domain.CategoriaModel> Categorias { get; set; } = new();
 }
+
 
 <header>
 	<!-- navbar -->
@@ -225,7 +217,7 @@
 							</button>
 							<ul class="dropdown-menu">
 								@foreach (var category in Categorias) {
-									<li><a class="dropdown-item" href="Productos">@category</a></li>
+									<li><a class="dropdown-item" href="Productos">@category.Nombre</a></li>
 								}
 							</ul>
 						</div>

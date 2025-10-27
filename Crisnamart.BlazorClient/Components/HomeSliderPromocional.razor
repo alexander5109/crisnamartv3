@@ -1,6 +1,9 @@
 ﻿@code {
     [Parameter]
     public List<Domain.SlidePromocionalModel> Slides { get; set; } = new();
+
+
+    public string clasesInternas = "lg:py-32 p-12 lg:pl-12 xl:w-2/5 md:w-3/5";
 }
 
 <section class="mt-8">
@@ -20,7 +23,7 @@
                 @foreach (var slide in Slides) {
                     <div class="swiper-slide"
                          style="background: url(@slide.ImagenUrl) no-repeat; background-size: cover; border-radius: 0.5rem; background-position: center">
-                        <div class="@slide.ClasesInternas">
+                        <div class="@clasesInternas">
                             <span class="inline-block p-2 text-sm align-baseline leading-none rounded-lg bg-yellow-500 text-gray-900 font-semibold">
                                 @slide.Subtitulo
                             </span>
