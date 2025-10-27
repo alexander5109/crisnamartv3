@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Crisnamart.DB\Crisnamart.DB.csproj" />
+    <ProjectReference Include="..\Crisnamart.Domain\Crisnamart.Domain.csproj" />
   </ItemGroup>
 
 </Project>

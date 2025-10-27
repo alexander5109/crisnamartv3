@@ -16,9 +16,6 @@ public class ProductosController : ControllerBase {
 
 
 
-
-
-
 	[HttpGet]
 	public async Task<ActionResult<IEnumerable<Producto>>> GetAll() {
 		try {
