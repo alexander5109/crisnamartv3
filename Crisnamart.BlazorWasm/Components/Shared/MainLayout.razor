@@ -13,6 +13,8 @@
 			{
 				// Attach controls to swiper web components and initialize any countdowns
 				await JS.InvokeVoidAsync("initializeCountdowns");
+				// Hide initial loader overlay
+				await JS.InvokeVoidAsync("hideAppLoader");
 			}
 			catch (Exception ex)
 			{
@@ -37,7 +39,6 @@
 		RedesSociales="@Domain.PrototipoContenido.GetRedesSocialesEjemplo()"
 		MediosDeContacto="@Domain.PrototipoContenido.GetMediosDeContactoEjemplo()"
 		FooterTrademark1="@Domain.PrototipoContenido.GetTrademarkEjemplo()" />
-
 
 
 <div id="blazor-error-ui">

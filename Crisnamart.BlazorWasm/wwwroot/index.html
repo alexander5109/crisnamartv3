@@ -6,6 +6,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<base href="/" />
 
+	<!-- Default title (updated by Blazor HeadOutlet/PageTitle) -->
+	<title>Crisnamart - 2026</title>
+
+	<!-- Minimal inline styles for loader to show before external CSS loads -->
+	<style>
+		/* App loader visible immediately */
+		#blazor-loader {
+			position:fixed;
+			inset:0;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			background-color:#ffffff; /* neutral background */
+			z-index:99999;
+		}
+		#blazor-loader .spinner {
+			width:64px;
+			height:64px;
+			border-radius:50%;
+			border:6px solid rgba(0,0,0,0.08);
+			border-top-color:#16a34a; /* green accent */
+			animation:blazor-spin1s linear infinite;
+		}
+		@keyframes blazor-spin { to { transform: rotate(360deg); } }
+	</style>
+
 	<!-- 🧩 Blazor & App styles -->
 	<link rel="stylesheet" href="css/app.css" />
 	<link rel="stylesheet" href="Crisnamart.BlazorWasm.styles.css" />
@@ -30,8 +56,35 @@
 </head>
 
 <body>
+	<!-- Loader shown while Blazor / resources load -->
+	<div id="blazor-loader">
+		<div>
+			<div class="spinner" aria-hidden="true"></div>
+			<div class="sr-only" style="text-align:center;margin-top:8px">Cargando Crisnamart...</div>
+		</div>
+	</div>
+
 	<!-- 🧭 Layout and routed content -->
-	<div id="app"></div>
+	<div id="app">
+		<!-- initial fallback content can go here; Blazor will replace this when mounted -->
+		<!-- empty: the loader above covers the screen -->
+	</div>
+
+	<!-- JS helper to hide the loader from Blazor after first render -->
+	<script>
+		window.hideAppLoader = function () {
+			try {
+				var el = document.getElementById('blazor-loader');
+				if (el) {
+					el.style.transition = 'opacity250ms ease';
+					el.style.opacity = '0';
+					setTimeout(function () { el.remove(); },300);
+				}
+			} catch (e) {
+				console.warn('hideAppLoader failed', e);
+			}
+		};
+	</script>
 
 	<!-- 🧱 Core JS dependencies (Bootstrap first) -->
 	<script src="js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
