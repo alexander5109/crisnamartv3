@@ -21,7 +21,7 @@ builder.Services.AddScoped(sp => new HttpClient {
 });
 
 // --- Servicios de tu dominio (datos hardcodeados) ---
-builder.Services.AddSingleton<PrototipoContenido>(); // Ejemplo: un service que expone tus listas hardcodeadas
+builder.Services.AddSingleton<PrototipoContenido>(); 
 
 // --- Logging y manejo de errores globales opcional ---
 builder.Logging.SetMinimumLevel(LogLevel.Warning);

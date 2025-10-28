@@ -1,6 +1,8 @@
 ﻿@page "/"
-<PageTitle>Crisnamart - 2026</PageTitle>
 
+<HeadContent>
+	<title>Crisnamart - 2026</title>
+</HeadContent>
 
 <HomeSliderPromocional Slides="@Domain.PrototipoContenido.GetSlidePromocionalModelEjemplos()" />
 
@@ -15,4 +17,3 @@
 <HomePropuestaDeValor Propuestas="@Domain.PrototipoContenido.GetPropuestaValorEjemplos()" />
 
 <HomeModalProduct Product="@Domain.PrototipoContenido.GetProductDetailsModelEjemplo()" />
-
