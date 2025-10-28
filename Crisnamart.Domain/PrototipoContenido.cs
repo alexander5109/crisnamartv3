@@ -224,7 +224,8 @@ public class PrototipoContenido {
 
 	public static FooterTrademark GetTrademarkEjemplo() => new() {
 		Empresa = "Crisnamart",
-		TextoLegal = "Todos los derechos reservados.<br/>Plantilla Tailwind-eCommerce adaptada por Seling Alexander."
+		Copyright = "Todos los derechos reservados.",
+		Creditos = "Plantilla Tailwind-eCommerce adaptada por Seling Alexander."
 	};
 
 

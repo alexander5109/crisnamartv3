@@ -105,7 +105,8 @@ public record FooterLink {
 
 public record FooterTrademark {
 	public string Empresa { get; set; } = string.Empty;
-	public string TextoLegal { get; set; } = string.Empty;
+	public string Copyright { get; set; } = string.Empty;
+	public string Creditos { get; set; } = string.Empty;
 }
 
 public record MedioDePago {
