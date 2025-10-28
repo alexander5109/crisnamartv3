@@ -103,23 +103,25 @@ public record FooterLink {
 	public string Url { get; set; } = "#";
 }
 
-public record FooterPayment {
-	public string Nombre { get; set; } = string.Empty;
-	public string ImagePath { get; set; } = string.Empty;
-	public string Url { get; set; } = "#";
-}
-
-public record FooterSocial {
-	public string Nombre { get; set; } = string.Empty;
-	public string ImagePath { get; set; } = string.Empty;
-	public string Url { get; set; } = "#";
-}
-
 public record FooterTrademark {
 	public string Empresa { get; set; } = string.Empty;
 	public string TextoLegal { get; set; } = string.Empty;
 }
 
+public record MedioDePago {
+	public string Nombre { get; set; } = string.Empty;
+	public string ImagePath { get; set; } = string.Empty;
+	public string Url { get; set; } = "#";
+}
 
+public record RedSocial {
+	public string Nombre { get; set; } = string.Empty;
+	public string ImagePath { get; set; } = string.Empty;
+	public string Url { get; set; } = "#";
+}
 
-
+public record MedioDeContacto {
+	public string Nombre { get; set; } = string.Empty;
+	public string ImagePath { get; set; } = string.Empty;
+	public string Url { get; set; } = "#";
+}

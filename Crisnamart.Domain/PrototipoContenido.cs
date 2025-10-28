@@ -201,38 +201,28 @@ public static class PrototipoContenido {
 
 
 
-	public static List<FooterPayment> GetMediosDePagoEjemplo() => new()
-	{
-		new() { Nombre = "Visa", ImagePath = "images/payment/visa.svg" },
-		new() { Nombre = "Mastercard", ImagePath = "images/payment/mastercard.svg" },
-		new() { Nombre = "PayPal", ImagePath = "images/payment/paypal.svg" },
-		new() { Nombre = "MercadoPago", ImagePath = "images/payment/mp.svg" },
+	public static List<MedioDePago> GetMediosDePagoEjemplo() => new(){
+		new MedioDePago { Nombre = "MercadoPago", ImagePath = "images/payment/mp_28.svg", Url = "#!"  },
+		new MedioDePago { Nombre = "Visa", ImagePath = "images/payment/visa.svg", Url = "#!"  },
+		new MedioDePago { Nombre = "Mastercard", ImagePath = "images/payment/mastercard.svg", Url = "#!"  },
+		//new MedioDePago { Nombre = "PayPal", ImagePath = "images/payment/paypal.svg", Url = "#!"  },
 	};
 
-	public static List<FooterSocial> GetRedesSocialesEjemplo() => new()
-	{
-		new() { Nombre = "Facebook", ImagePath = "images/social/facebook.png", Url = "#!" },
-		new() { Nombre = "WhatsApp", ImagePath = "images/social/whatsapp.png", Url = "#!" },
-		new() { Nombre = "X (Twitter)", ImagePath = "images/social/x.png", Url = "#!" },
-		new() { Nombre = "Instagram", ImagePath = "images/social/instagram.png", Url = "#!" },
+	public static List<RedSocial> GetRedesSocialesEjemplo() => new(){
+		new() { Nombre = "Facebook", ImagePath = "images/social/28x28/facebook.png", Url = "https://www.facebook.com/" },
+		new() { Nombre = "X (Twitter)", ImagePath = "images/social/28x28/x.png", Url = "https://x.com/" },
+		new() { Nombre = "Instagram", ImagePath = "images/social/28x28/instagram.png", Url = "https://www.instagram.com/" },
+	};
+
+	public static List<MedioDeContacto> GetMediosDeContactoEjemplo() => new(){
+		new MedioDeContacto{ Nombre = "WhatsApp", ImagePath = "images/contact/whatsapp_28.png", Url = "https://wa.me/541173624473" },
+		new MedioDeContacto{ Nombre = "Email", ImagePath = "images/contact/email_28.svg", Url = "mailto:contacto@crisnamart.com" }
 	};
 
 	public static FooterTrademark GetTrademarkEjemplo() => new() {
 		Empresa = "Crisnamart",
-		TextoLegal = "Todos los derechos reservados. Template Tailwind eCommerce adaptado por el equipo de desarrollo."
+		TextoLegal = "Todos los derechos reservados.<br/>Plantilla Tailwind-eCommerce adaptada por Seling Alexander."
 	};
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
