@@ -24,6 +24,35 @@ public static class PrototipoContenido {
 		Link = "#!"
 	};
 
+	public static PromoBannerModel GetPromoBannerModelEjemplo() => new() {
+		Title = "Promoción Mayorista - Lotes Seleccionados",
+		Description = "Descuentos especiales por compra por mayor en artículos de bazar. Ideal para reposición de locales y distribuidores.",
+		ImageUrl = "images/banner/banner-deal.jpg",
+		ButtonText = "Ver ofertas",
+		Link = "#!"
+	};
+
+
+	public static List<PromocionModel> GetPromocionModelEjemplos() => [
+		new PromocionModel {
+			Titulo = "Stock Mayorista",
+			Descuento =30,
+			ImagenUrl = "images/banner/grocery-banner.png",
+			Link = "#!",
+			TextoBoton = "Encargar ahora"
+		},
+		new PromocionModel {
+			Titulo = "Liquidación de Temporada",
+			Descuento =25,
+			ImagenUrl = "images/banner/grocery-banner-2.jpg",
+			Link = "#!",
+			TextoBoton = "Ver precios"
+		}
+	];
+
+
+
+
 	public static List<ProductCardModel> GetProductCardModelEjemplos() => [
 		new ProductCardModel {
 			Id =11,
@@ -63,32 +92,6 @@ public static class PrototipoContenido {
 			Badge = "Nuevo",
 			Link = "#!",
 			DealEndsAt = new DateTime(2028,11,11)
-		}
-	];
-
-	public static PromoBannerModel GetPromoBannerModelEjemplo() => new() {
-		Title = "Promoción Mayorista - Lotes Seleccionados",
-		Description = "Descuentos especiales por compra por mayor en artículos de bazar. Ideal para reposición de locales y distribuidores.",
-		ImageUrl = "images/banner/banner-deal.jpg",
-		ButtonText = "Ver ofertas",
-		Link = "#!"
-	};
-
-
-	public static List<PromocionModel> GetPromocionModelEjemplos() => [
-		new PromocionModel {
-			Titulo = "Stock Mayorista",
-			Descuento =30,
-			ImagenUrl = "images/banner/grocery-banner.png",
-			Link = "#!",
-			TextoBoton = "Encargar ahora"
-		},
-		new PromocionModel {
-			Titulo = "Liquidación de Temporada",
-			Descuento =25,
-			ImagenUrl = "images/banner/grocery-banner-2.jpg",
-			Link = "#!",
-			TextoBoton = "Ver precios"
 		}
 	];
 
