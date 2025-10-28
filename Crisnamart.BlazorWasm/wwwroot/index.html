@@ -8,7 +8,7 @@
 
 	<!-- 🧩 Blazor & App styles -->
 	<link rel="stylesheet" href="css/app.css" />
-	<link rel="stylesheet" href="Crisnamart.BlazorClient.styles.css" />
+	<link rel="stylesheet" href="Crisnamart.BlazorWasm.styles.css" />
 
 	<!-- 🛒 FreshCart core styles -->
 	<link href="js/tiny-slider/dist/tiny-slider.css" rel="stylesheet" />
@@ -39,10 +39,6 @@
 	<script src="js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="js/simplebar/dist/simplebar.min.js"></script>
 
-	<!-- 🧩 Blazor WebAssembly runtime (load before FreshCart behavior scripts so they initialize after components are rendered) -->
-	<script src="_framework/blazor.webassembly.js"></script>
-
-	<!-- 🧩 FreshCart behavior scripts -->
 	<script src="js/vendors/countdown.js"></script>
 	<script src="js/tiny-slider/dist/min/tiny-slider.js"></script>
 	<script src="js/vendors/tns-slider.js"></script>
@@ -53,6 +49,9 @@
 
 	<!-- 🧠 FreshCart main logic -->
 	<script src="js/main.js"></script>
+
+	<!-- 🧩 Blazor WebAssembly runtime (last) -->
+	<script src="_framework/blazor.webassembly.js"></script>
 
 </body>
 
