@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.BlazorClient", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.Domain", "Crisnamart.Domain\Crisnamart.Domain.csproj", "{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.BlazorWasm", "Crisnamart.BlazorWasm\Crisnamart.BlazorWasm.csproj", "{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,18 @@ Global
 		{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}.Release|x64.Build.0 = Release|Any CPU
 		{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}.Release|x86.ActiveCfg = Release|Any CPU
 		{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}.Release|x86.Build.0 = Release|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Debug|x64.Build.0 = Debug|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Debug|x86.Build.0 = Debug|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Release|x64.ActiveCfg = Release|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Release|x64.Build.0 = Release|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Release|x86.ActiveCfg = Release|Any CPU
+		{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

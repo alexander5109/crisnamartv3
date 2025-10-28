@@ -1,0 +1,125 @@
+﻿@code {
+	[Parameter]
+	public Domain.ProductDetailsModel? Product { get; set; }
+}
+
+
+<!-- Modal genérico: espera un ProductDetailsModel como parámetro -->
+<div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered lg:min-w-[1140px]">
+		<div class="modal-content">
+			<div class="modal-body p-8">
+				<div class="absolute top-0 right-0 p-3">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<!-- icono cierre -->
+					</button>
+				</div>
+
+				@if (Product is null) {
+					<div class="p-6">Vista rápida del producto (no se proporcionó modelo)</div>
+				} else {
+					<div class="flex flex-wrap">
+						<div class="md:w-1/2">
+							<!-- imágenes principales -->
+							<div class="product productModal" id="productModal">
+								@foreach (var img in Product.ImageUrls) {
+									<div class="zoom" style=@($"background-image: url({img})")>
+										<img src="@img" alt="@Product.Title" />
+									</div>
+								}
+							</div>
+
+							<!-- thumbnails -->
+							<div class="product-tools">
+								<div class="thumbnails flex gap-3" id="productModalThumbnails">
+									@foreach (var img in Product.ImageUrls) {
+										<div class="w-1/4">
+											<div class="thumbnails-img">
+												<img src="@img" alt="@Product.Title" />
+											</div>
+										</div>
+									}
+								</div>
+							</div>
+						</div>
+
+						<div class="md:w-1/2 pr-4 pl-4">
+							<div class="lg:pl-10 mt-6 md:mt-0">
+								<div class="flex flex-col gap-4">
+									<a href="@Product.Link" class="block text-green-600">@Product.Category</a>
+									<h1>@Product.Title</h1>
+
+									<div class="flex flex-col gap-2">
+										<div class="flex items-center">
+											<small class="text-yellow-500 inline-flex items-center">
+												@* Simple representación de estrellas según Rating *@
+												@for (int i = 0; i < Math.Floor(Product.Rating); i++) {
+													<svg class="icon icon-tabler icon-tabler-star-filled" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"></svg>
+												}
+											</small>
+											<a href="@Product.Link" class="text-green-600">(@Product.RatingCount reviews)</a>
+										</div>
+
+										<div class="text-md">
+											<span class="text-gray-900 font-semibold">@($"${Product.Price}")</span>
+											@if (Product.OldPrice is not null) {
+												<span class="line-through text-gray-500">@($"${Product.OldPrice}")</span>
+											}
+											@if (!string.IsNullOrEmpty(Product.Badge)) {
+												<span><small class="text-red-600">@Product.Badge</small></span>
+											}
+										</div>
+									</div>
+
+									<hr />
+
+									<div>
+										<p>@Product.Description</p>
+									</div>
+
+									<!-- selector de cantidad y acciones -->
+									<div class="flex flex-wrap justify-start gap-2 items-center">
+										<div class="lg:w-1/3 md:w-2/5 w-full grid">
+											<button class="btn bg-green-600 text-white">Agregar al carrito</button>
+										</div>
+										<div class="md:w-1/3 w-full">
+											<a class="btn inline-flex items-center px-0 h-10 w-10 justify-center bg-white" href="#">♡</a>
+										</div>
+									</div>
+
+									<hr />
+
+									<table class="text-left w-full">
+										<tbody>
+											<tr>
+												<td class="px-6 py-3">Código:</td>
+												<td class="px-6 py-3">@Product.ProductCode</td>
+											</tr>
+											<tr>
+												<td class="px-6 py-3">Disponibilidad:</td>
+												<td class="px-6 py-3">@Product.Availability</td>
+											</tr>
+											<tr>
+												<td class="px-6 py-3">Tipo:</td>
+												<td class="px-6 py-3">@Product.Type</td>
+											</tr>
+											<tr>
+												<td class="px-6 py-3">Envío:</td>
+												<td class="px-6 py-3"><small>@Product.ShippingInfo</small></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div>
+										<!-- share dropdown simplificado -->
+										<a class="btn inline-flex items-center bg-white" href="#">Compartir</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>

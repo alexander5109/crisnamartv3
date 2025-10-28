@@ -1,0 +1,24 @@
+﻿@code {
+    [Parameter]
+    public List<Domain.PropuestaValor> Propuestas { get; set; } = new();
+}
+
+<section class="lg:my-14 my-8">
+    <div class="container">
+        <div class="flex flex-wrap gap-y-6">
+            @foreach (var p in Propuestas) {
+                <div class="md:w-1/2 lg:w-1/4 px-3">
+                    <div class="flex flex-col gap-4">
+                        <div class="inline-block">
+                            <img src="@p.Icono" alt="@p.Titulo" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-md font-semibold">@p.Titulo</h3>
+                            <p>@p.Descripcion</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

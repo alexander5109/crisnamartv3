@@ -1,6 +1,6 @@
 ﻿namespace Crisnamart.Domain;
 
-public static class PrototipoContenido {
+public class PrototipoContenido {
 	public static ProductDetailsModel GetProductDetailsModelEjemplo() => new() {
 		Id = 100,
 		Title = "Set de Vajilla Clásica - Crisnamart",

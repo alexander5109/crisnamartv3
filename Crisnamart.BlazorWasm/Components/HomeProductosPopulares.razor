@@ -1,0 +1,85 @@
+﻿@code {
+	[Parameter]
+	public List<Domain.LocalProduct> ProductosPopulares { get; set; } = new();
+}
+
+
+<section class="lg:my-14 my-8">
+	<div class="container">
+		<div class="flex flex-wrap">
+			<div class="w-full mb-6">
+				<h2 class="text-lg">Más vendidos</h2>
+			</div>
+		</div>
+
+		<div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:gap-4 xl:grid-cols-5">
+			@foreach (var product in ProductosPopulares) {
+				<div class="relative rounded-lg break-words border bg-white border-gray-300 card-product">
+					<div class="flex-auto p-4">
+						<div class="text-center relative flex justify-center">
+							@if (!string.IsNullOrWhiteSpace(product.Badge))
+							{
+								<div class="absolute top-0 left-0">
+									<span class="inline-block p-1 text-center font-semibold text-sm align-baseline leading-none rounded bg-red-600 text-white">@product.Badge</span>
+								</div>
+							}
+
+							<a href="#">
+								<img src="@product.ImageUrl" alt="@product.Title" class="w-full h-auto" />
+							</a>
+
+							<div class="absolute w-full bottom-[15%] opacity-0 invisible card-product-action">
+								<button type="button" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white"
+										data-bs-toggle="tooltip" data-bs-html="true" title="Quick View" aria-label="Quick View">
+									<i class="bi bi-eye"></i>
+								</button>
+								<button type="button" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white"
+										data-bs-toggle="tooltip" data-bs-html="true" title="Wishlist" aria-label="Wishlist">
+									<i class="bi bi-heart"></i>
+								</button>
+								<button type="button" class="h-[34px] w-[34px] leading-[34px] bg-white shadow inline-flex items-center justify-center rounded-lg hover:bg-green-600 hover:text-white"
+										data-bs-toggle="tooltip" data-bs-html="true" title="Compare" aria-label="Compare">
+									<i class="bi bi-arrow-left-right"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="flex flex-col gap-3">
+							<a href="#" class="text-decoration-none text-gray-500"><small>@product.Category</small></a>
+							<div class="flex flex-col gap-2">
+								<h3 class="text-base truncate"><a href="#">@product.Title</a></h3>
+								<div class="flex items-center">
+									<div class="flex flex-row gap-3">
+										<small class="text-yellow-500 flex items-center">
+											<StarRating Value="@product.Rating" Size="14px" FilledColor="#f59e0b" />
+										</small>
+										<div class="flex flex-row gap-1">
+											<span class="text-gray-500 text-sm">@product.Rating</span>
+											<span class="text-gray-500 text-sm">(@product.RatingCount)</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flex justify-between items-center">
+								<div>
+									<span class="text-gray-900 font-semibold">$@product.Price</span>
+									@if (product.OldPrice.HasValue)
+									{
+										<span class="line-through text-gray-500">$@product.OldPrice</span>
+									}
+								</div>
+								<div>
+									<button type="button" class="btn inline-flex items-center gap-x-1 bg-green-600 text-white border-green-600 btn-sm">
+										<i class="bi bi-plus-lg"></i>
+										<span>Agregar</span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</section>
