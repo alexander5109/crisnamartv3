@@ -1,9 +1,20 @@
-﻿@code {
+﻿@inject Microsoft.JSInterop.IJSRuntime JS
+@code {
 	[Parameter]
 	public List<Domain.ProductCardModel>? Items { get; set; }
 
 	[Parameter]
 	public Domain.PromoBannerModel? Banner { get; set; }
+
+	protected override async Task OnAfterRenderAsync(bool firstRender) {
+		if (firstRender) {
+			try {
+				await JS.InvokeVoidAsync("initializeCountdowns");
+			} catch (Exception ex) {
+				Console.Error.WriteLine($"Failed to initialize countdowns: {ex}");
+			}
+		}
+	}
 }
 
 <section>
@@ -62,7 +73,7 @@
 													<span class="text-gray-900 font-semibold">@($"${item.Price}")</span>
 													@if (item.OldPrice is not null)
 													{
-														<span class="line-through text-gray-500">@($"${item.OldPrice}")</span>
+														<span class="line-through text-gray-500">@($" ${item.OldPrice}")</span>
 													}
 												</div>
 
