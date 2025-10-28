@@ -23,8 +23,7 @@
 						  effect="slide"
 						  breakpoints='{"480": {"slidesPerView":2}, "768": {"slidesPerView":3}, "1024": {"slidesPerView":6}}'>
 
-			@foreach (var categoria in Categorias)
-			{
+			@foreach (var categoria in Categorias) {
 				<swiper-slide>
 					<a href="@categoria.Link">
 						<div class="relative rounded-lg break-words border bg-white border-gray-300 transition duration-75 hover:transition hover:duration-500 ease-in-out hover:border-green-600 hover:shadow-md">
