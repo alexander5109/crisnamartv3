@@ -8,6 +8,8 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 // Punto de entrada de tu app Blazor
 builder.RootComponents.Add<App>("#app");
+// Head outlet for dynamic title/meta
+builder.RootComponents.Add<HeadOutlet>("head::after");
 
 // --- HttpClient para la API ---
 string? apiBaseUrl = builder.Configuration["ApiBaseUrl"];
