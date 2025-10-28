@@ -24,8 +24,8 @@
 							 style="background: url(@Banner.ImageUrl) no-repeat; background-size: cover; height: 470px">
 							<div class="flex flex-col gap-5 text-white">
 								<div class="flex flex-col gap-2">
-									<h3 class="text-lg">@Banner.Title</h3>
-									<p class="text-base">@Banner.Description</p>
+									<h3 class="text-lg text-white">@Banner.Title</h3>
+									<p class="text-white text-base">@Banner.Description</p>
 								</div>
 								<div>
 									<a href="@Banner.Link" class="btn inline-flex items-center bg-green-600 text-white">@Banner.ButtonText</a>
@@ -81,7 +81,7 @@
 										</div>
 
 										<div class="grid">
-											<button class="btn bg-green-600 text-white">Agregar</button>
+											<button class="btn bg-green-600 text-white">Agregar al carrito</button>
 										</div>
 
 										@if (item.DealEndsAt is not null)

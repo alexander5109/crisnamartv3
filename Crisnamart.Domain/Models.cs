@@ -85,11 +85,40 @@ public record PromoBannerModel {
 	public string? Link { get; init; }
 }
 
+// Nuevo: modelos para el Footer
+public record Enlace {
+	public required string Nombre { get; init; }
+	public required string Url { get; init; }
+}
+
+public record FooterColumn {
+	public required string Titulo { get; init; }
+	public required List<Enlace> Enlaces { get; init; }
+}
 
 
 
+public record FooterLink {
+	public string Nombre { get; set; } = string.Empty;
+	public string Url { get; set; } = "#";
+}
 
+public record FooterPayment {
+	public string Nombre { get; set; } = string.Empty;
+	public string ImagePath { get; set; } = string.Empty;
+	public string Url { get; set; } = "#";
+}
 
+public record FooterSocial {
+	public string Nombre { get; set; } = string.Empty;
+	public string ImagePath { get; set; } = string.Empty;
+	public string Url { get; set; } = "#";
+}
+
+public record FooterTrademark {
+	public string Empresa { get; set; } = string.Empty;
+	public string TextoLegal { get; set; } = string.Empty;
+}
 
 
 

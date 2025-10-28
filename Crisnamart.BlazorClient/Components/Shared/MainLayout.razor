@@ -2,6 +2,7 @@
 @code{
 
 	List<Domain.CategoriaModel> categorias = Domain.PrototipoContenido.GetCategoriaModelEjemplos();
+	List<Domain.FooterColumn> footerColumns = Domain.PrototipoContenido.GetFooterColumnsEjemplos();
 }
 
 <!-- Top navbar -->
@@ -13,7 +14,11 @@
 </main>
 
 
-<Footer Categorias=@categorias />
+
+<Footer Columns="@Domain.PrototipoContenido.GetFooterColumnsEjemplos()"
+		MediosDePago="@Domain.PrototipoContenido.GetMediosDePagoEjemplo()"
+		RedesSociales="@Domain.PrototipoContenido.GetRedesSocialesEjemplo()"
+		Trademark="@Domain.PrototipoContenido.GetTrademarkEjemplo()" />
 
 
 

@@ -2,14 +2,14 @@
 
 public static class PrototipoContenido {
 	public static ProductDetailsModel GetProductDetailsModelEjemplo() => new() {
-		Id =100,
+		Id = 100,
 		Title = "Set de Vajilla Clásica - Crisnamart",
 		Category = "Vajilla y Cubiertos",
 		Description = "Set de vajilla de acero inoxidable ideal para comercios y mayoristas. Resistente, fácil de limpiar y con diseño clásico para reposición en mostradores y locales.",
-		Price =180m,
-		OldPrice =240m,
-		Rating =4.5,
-		RatingCount =30,
+		Price = 180m,
+		OldPrice = 240m,
+		Rating = 4.5,
+		RatingCount = 30,
 		Badge = "Oferta",
 		ImageUrls = [
 			"images/products/product-single-img-1.jpg",
@@ -158,4 +158,81 @@ public static class PrototipoContenido {
 			Descripcion = "Asesoramiento comercial directo y soluciones a medida para clientes mayoristas."
 		}
 	];
+
+	public static List<FooterColumn> GetFooterColumnsEjemplos() => [
+		new FooterColumn {
+			Titulo = "Categorías",
+			Enlaces = [
+				new Enlace { Nombre = "Artículos de Cocina", Url = "#!" },
+				new Enlace { Nombre = "Vajilla y Cubiertos", Url = "#!" },
+				new Enlace { Nombre = "Pequeños Electrodomésticos", Url = "#!" },
+				new Enlace { Nombre = "Hogar y Organización", Url = "#!" },
+				new Enlace { Nombre = "Decoración", Url = "#!" }
+			]
+		},
+		new FooterColumn {
+			Titulo = "Información",
+			Enlaces = [
+				new Enlace { Nombre = "Quiénes somos", Url = "#!" },
+				new Enlace { Nombre = "Contacto", Url = "#!" },
+				new Enlace { Nombre = "Términos y condiciones", Url = "#!" },
+				new Enlace { Nombre = "Política de privacidad", Url = "#!" }
+			]
+		},
+		new FooterColumn {
+			Titulo = "Clientes",
+			Enlaces = [
+				new Enlace { Nombre = "Cómo comprar", Url = "#!" },
+				new Enlace { Nombre = "Formas de pago", Url = "#!" },
+				new Enlace { Nombre = "Envíos y logística", Url = "#!" },
+				new Enlace { Nombre = "Devoluciones", Url = "#!" }
+			]
+		},
+		new FooterColumn {
+			Titulo = "Programas",
+			Enlaces = [
+				new Enlace { Nombre = "Ofertas por volumen", Url = "#!" },
+				new Enlace { Nombre = "Trabajá con nosotros", Url = "#!" },
+				new Enlace { Nombre = "Novedades", Url = "#!" }
+			]
+		}
+	];
+
+
+
+
+	public static List<FooterPayment> GetMediosDePagoEjemplo() => new()
+	{
+		new() { Nombre = "Visa", ImagePath = "images/payment/visa.svg" },
+		new() { Nombre = "Mastercard", ImagePath = "images/payment/mastercard.svg" },
+		new() { Nombre = "PayPal", ImagePath = "images/payment/paypal.svg" },
+		new() { Nombre = "MercadoPago", ImagePath = "images/payment/mp.svg" },
+	};
+
+	public static List<FooterSocial> GetRedesSocialesEjemplo() => new()
+	{
+		new() { Nombre = "Facebook", ImagePath = "images/social/facebook.png", Url = "#!" },
+		new() { Nombre = "WhatsApp", ImagePath = "images/social/whatsapp.png", Url = "#!" },
+		new() { Nombre = "X (Twitter)", ImagePath = "images/social/x.png", Url = "#!" },
+		new() { Nombre = "Instagram", ImagePath = "images/social/instagram.png", Url = "#!" },
+	};
+
+	public static FooterTrademark GetTrademarkEjemplo() => new() {
+		Empresa = "Crisnamart",
+		TextoLegal = "Todos los derechos reservados. Template Tailwind eCommerce adaptado por el equipo de desarrollo."
+	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

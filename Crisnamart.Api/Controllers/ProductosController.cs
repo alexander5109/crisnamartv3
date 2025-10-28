@@ -7,14 +7,8 @@ namespace Crisnamart.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ProductosController : ControllerBase {
-	private readonly DB.CrisnamartContext _context;
-
-	public ProductosController(DB.CrisnamartContext context) {
-		_context = context;
-	}
-
-
+public class ProductosController(DB.CrisnamartContext context) : ControllerBase {
+	private readonly DB.CrisnamartContext _context = context;
 
 	[HttpGet]
 	public async Task<ActionResult<IEnumerable<Producto>>> GetAll() {
@@ -25,7 +19,7 @@ public class ProductosController : ControllerBase {
 			return Ok(productos);
 		} catch (Exception ex) {
 			// You could log ex here
-			return StatusCode(500, "Error al obtener productos. Verifique que la base de datos esté en funcionamiento.");
+			return StatusCode(500, $"Error al obtener productos. Verifique que la base de datos esté en funcionamiento.\nDetails:\n{ex}");
 		}
 	}
 
@@ -38,7 +32,7 @@ public class ProductosController : ControllerBase {
 			return producto == null ? NotFound() : Ok(producto);
 		} catch (Exception ex) {
 			// Log ex here if needed
-			return StatusCode(500, "Error al obtener el producto. Verifique que la base de datos esté en funcionamiento.");
+			return StatusCode(500, $"Error al obtener el producto. Verifique que la base de datos esté en funcionamiento.\nDetails:\n{ex}");
 		}
 	}
 
