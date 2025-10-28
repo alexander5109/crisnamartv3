@@ -4,40 +4,15 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Crisnamart.BlazorWasm2</title>
 	<base href="/" />
-
-	<!-- Default title (updated by Blazor HeadOutlet/PageTitle) -->
-	<title>Crisnamart - 2026</title>
-
-	<!-- Minimal inline styles for loader to show before external CSS loads -->
-	<style>
-		/* App loader visible immediately */
-		#blazor-loader {
-			position:fixed;
-			inset:0;
-			display:flex;
-			align-items:center;
-			justify-content:center;
-			background-color:#ffffff; /* neutral background */
-			z-index:99999;
-		}
-		#blazor-loader .spinner {
-			width:64px;
-			height:64px;
-			border-radius:50%;
-			border:6px solid rgba(0,0,0,0.08);
-			border-top-color:#16a34a; /* green accent */
-			animation:blazor-spin1s linear infinite;
-		}
-		@keyframes blazor-spin { to { transform: rotate(360deg); } }
-	</style>
-
-	<!-- 🧩 Blazor & App styles -->
 	<link rel="stylesheet" href="css/app.css" />
-	<link rel="stylesheet" href="Crisnamart.BlazorWasm.styles.css" />
-
-	<!-- 🛒 FreshCart core styles -->
 	<link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+	<link href="Crisnamart.BlazorWasm.styles.css" rel="stylesheet" />
+	<link href="manifest.webmanifest" rel="manifest" />
+	<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+	<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+
 
 	<!-- 🧱 Fonts & Icon libs -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,40 +26,22 @@
 
 	<!-- 🎨 FreshCart theme -->
 	<link rel="stylesheet" href="css/freshcart.css" />
-
-	<!-- head outlet will be attached by Blazor via Program.RootComponents.Add<HeadOutlet>("head::after") -->
 </head>
 
 <body>
-	<!-- Loader shown while Blazor / resources load -->
-	<div id="blazor-loader">
-		<div>
-			<div class="spinner" aria-hidden="true"></div>
-			<div class="sr-only" style="text-align:center;margin-top:8px">Cargando Crisnamart...</div>
-		</div>
-	</div>
-
-	<!-- 🧭 Layout and routed content -->
 	<div id="app">
-		<!-- initial fallback content can go here; Blazor will replace this when mounted -->
-		<!-- empty: the loader above covers the screen -->
+		<svg class="loading-progress">
+			<circle r="40%" cx="50%" cy="50%" />
+			<circle r="40%" cx="50%" cy="50%" />
+		</svg>
+		<div class="loading-progress-text"></div>
 	</div>
 
-	<!-- JS helper to hide the loader from Blazor after first render -->
-	<script>
-		window.hideAppLoader = function () {
-			try {
-				var el = document.getElementById('blazor-loader');
-				if (el) {
-					el.style.transition = 'opacity250ms ease';
-					el.style.opacity = '0';
-					setTimeout(function () { el.remove(); },300);
-				}
-			} catch (e) {
-				console.warn('hideAppLoader failed', e);
-			}
-		};
-	</script>
+	<div id="blazor-error-ui">
+		An unhandled error has occurred.
+		<a href="" class="reload">Reload</a>
+		<a class="dismiss">🗙</a>
+	</div>
 
 	<!-- 🧱 Core JS dependencies (Bootstrap first) -->
 	<script src="js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -101,9 +58,9 @@
 	<!-- 🧠 FreshCart main logic -->
 	<script src="js/main.js"></script>
 
-	<!-- 🧩 Blazor WebAssembly runtime (last) -->
+	<!-- 🧩 Blazor WebAssembly runtime (last) --> 
 	<script src="_framework/blazor.webassembly.js"></script>
-
+	<script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 
 </html>
