@@ -3,10 +3,16 @@
 	[Parameter]
 	public List<Domain.CategoriaModel> Categorias { get; set; } = new();
 
-	// public List<string> Botones = new
-	// {
-		
-	// };
+	public List<Domain.Enlace> Enlaces = [
+		new Domain.Enlace { Titulo = "Home", Url = "#!" },
+		new Domain.Enlace { Titulo = "Productos", Url = "/Productos" },
+		new Domain.Enlace { Titulo = "Quienes Somos", Url = "/QuienesSomos" },
+		new Domain.Enlace { Titulo = "Contacto", Url = "/Contacto" },
+		// new Domain.Enlace { Titulo = "Dashboard", Url = "/Dashboard" },
+	];
+	
+	
+	
 }
 
 
@@ -171,38 +177,6 @@
 								</div>
 							</form>
 						</div>
-						<div class="block lg:hidden mb-4">
-							<a class="btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 justify-center"
-							   data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-							   aria-controls="collapseExample">
-								<span class="mr-2">
-									<svg xmlns="http://www.w3.org/2000/svg"
-										 class="icon icon-tabler icon-tabler-layout-grid" width="16" height="16"
-										 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-										 stroke-linecap="round" stroke-linejoin="round">
-										<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-										<path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-										<path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-										<path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-										<path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-									</svg>
-								</span>
-								Categorias
-							</a>
-							<div class="collapse mt-2" id="collapseExample">
-								<div class="card card-body">
-									<ul class="list-unstyled">
-										<li><a class="dropdown-item" href="#!">Dairy, Bread & Eggs</a></li>
-										<li><a class="dropdown-item" href="#!">Snacks & Munchies</a></li>
-										<li><a class="dropdown-item" href="#!">Fruits & Vegetables</a></li>
-										<li><a class="dropdown-item" href="#!">Cold Drinks & Juices</a></li>
-										<li><a class="dropdown-item" href="#!">Breakfast & Instant Food</a></li>
-										<li><a class="dropdown-item" href="#!">Bakery & Biscuits</a></li>
-										<li><a class="dropdown-item" href="#!">Chicken, Meat & Fish</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
 						<div class="dropdown hidden lg:block">
 							<button class="mr-4 btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300"
 									type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -226,57 +200,15 @@
 								}
 							</ul>
 						</div>
+
+
 						<div>
 							<ul class="navbar-nav lg:flex gap-3 lg:items-center">
-								<li class="nav-item dropdown w-full lg:w-auto">
-									<a class="nav-link " href="/" role="button">Home</a>
-
-								</li>
-								<li class="nav-item dropdown w-full lg:w-auto">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-									   aria-expanded="false">Dropdown Menu</a>
-									<ul class="dropdown-menu">
-
-										<li>
-											<a class="dropdown-item" href="#!">
-												Dropdown Link
-
-											</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#!">
-												Dropdown Link
-
-											</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#!">
-												Dropdown Link
-
-											</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#!">
-												Dropdown Link
-
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="nav-item dropdown w-full lg:w-auto dropdown-fullwidth">
-									<a class="nav-link " href="#!">
-										Quienes somos
-									</a>
-
-								</li>
-
-
-								<li class="nav-item">
-									<a class="nav-link" href="#!">Dashboard</a>
-								</li>
-
-
+								@foreach (var enlace in Enlaces) {
+									<li class="nav-item">
+										<a class="nav-link" href="@enlace.Url">@enlace.Titulo</a>
+									</li>
+								}
 							</ul>
 						</div>
 					</div>

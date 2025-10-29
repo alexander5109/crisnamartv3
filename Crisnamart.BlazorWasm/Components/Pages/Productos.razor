@@ -1,0 +1,15 @@
+﻿@page "/Productos"
+
+Hola?
+
+<button type="button" class="btn btn-primary color-black" data-bs-toggle="modal" data-bs-target="#quickViewModal">
+	Abrir modal
+</button>
+
+
+
+<CategoriasDestacados Categorias="@Domain.PrototipoContenido.GetCategoriaModelDestacadasEjemplos()" />
+
+<ProductosGrid ProductosPopulares="@Domain.PrototipoContenido.GetLocalProductEjemplos()" />
+
+<ProductoModal Product="@Domain.PrototipoContenido.GetProductDetailsModelEjemplo()" />

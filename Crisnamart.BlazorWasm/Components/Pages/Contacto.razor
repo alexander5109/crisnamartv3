@@ -1,0 +1,41 @@
+﻿@page "/Contacto"
+
+@code {
+	private List<Domain.IconoConEnlace> MediosDeContacto = Domain.PrototipoContenido.GetMediosDeContactoEjemplo();
+}
+
+
+<div class="flex flex-col sm:flex-row sm:justify-center gap-3">
+	<div class="inline-flex items-center justify-center px-5 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+		<!-- Medios de contacto -->
+		<div class="flex flex-col items-center md:flex-row gap-3 md:gap-6">
+			<div class="text-gray-600 font-semibold">Contactanos: </div>
+			<ul class="flex flex-row gap-3">
+				@foreach (var contacto in MediosDeContacto) {
+					<li>
+						<a href="@contacto.Url" class="inline-flex items-center justify-center">
+							<img src="@contacto.ImagePath" alt="@contacto.Titulo"
+								 class="object-contain" height="60" />
+						</a>
+					</li>
+				}
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- callout -->
+<div class="bg-gray-50 border-t">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+		<div>
+			<h5 class="text-lg font-semibold text-gray-900">¿Querés comprar al por mayor?</h5>
+			<p class="text-gray-600 text-sm">Contactanos y armamos un presupuesto a medida para tu comercio.</p>
+		</div>
+		<div id="contacto">
+			<a href="/Contacto" class="inline-flex items-center px-5 py-3 bg-green-600 text-white rounded-md hover:bg-green-700">Solicitar presupuesto</a>
+		</div>
+	</div>
+</div>

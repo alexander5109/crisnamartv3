@@ -106,6 +106,11 @@ public record FooterColumn {
 	public required List<Enlace> Enlaces { get; init; }
 }
 
+// public record DropdownMenu {
+	// public required string Titulo { get; init; }
+	// public required List<Enlace> Enlaces { get; init; }
+// }
+
 public record FooterTrademark {
 	public string Empresa { get; set; } = string.Empty;
 	public string Copyright { get; set; } = string.Empty;
