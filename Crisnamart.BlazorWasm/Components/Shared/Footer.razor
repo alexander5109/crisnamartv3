@@ -5,13 +5,13 @@
 	public required List<FooterColumn> Columns { get; set; }
 
 	[Parameter, EditorRequired]
-	public required List<MedioDePago> MediosDePago { get; set; }
+	public required List<IconoConEnlace> MediosDePago { get; set; }
 
 	[Parameter, EditorRequired]
-	public required List<RedSocial> RedesSociales { get; set; }
+	public required List<IconoConEnlace> RedesSociales { get; set; }
 
 	[Parameter, EditorRequired]
-	public required List<MedioDeContacto> MediosDeContacto { get; set; }
+	public required List<IconoConEnlace> MediosDeContacto { get; set; }
 
 	[Parameter, EditorRequired]
 	public required FooterTrademark FooterTrademark1 { get; set; }
@@ -35,14 +35,14 @@
 						<div class="w-1/2">
 							<ul class="flex flex-col gap-2">
 								@foreach (var category in firstColumna.Enlaces.Take((firstColumnaLength + 1) / 2)) {
-									<li><a href="#!" class="inline-block hover:text-green-600">@category.Nombre</a></li>
+									<li><a href="#!" class="inline-block hover:text-green-600">@category.Titulo</a></li>
 								}
 							</ul>
 						</div>
 						<div class="w-1/2">
 							<ul class="flex flex-col gap-2">
 								@foreach (var category in firstColumna.Enlaces.Skip((firstColumnaLength + 1) / 2)) {
-									<li><a href="#!" class="inline-block hover:text-green-600">@category.Nombre</a></li>
+									<li><a href="#!" class="inline-block hover:text-green-600">@category.Titulo</a></li>
 								}
 							</ul>
 						</div>
@@ -53,7 +53,7 @@
 					<h6 class="mb-2 font-semibold">@firstColumna.Titulo</h6>
 					<ul class="flex flex-col gap-2">
 						@foreach (var category in firstColumna.Enlaces) {
-							<li><a href="#!" class="inline-block hover:text-green-600">@category.Nombre</a></li>
+							<li><a href="#!" class="inline-block hover:text-green-600">@category.Titulo</a></li>
 						}
 					</ul>
 				</div>
@@ -67,7 +67,7 @@
 							<h6 class="mb-2 font-semibold">@col.Titulo</h6>
 							<ul class="flex flex-col gap-2">
 								@foreach (var link in col.Enlaces) {
-									<li><a href="@link.Url" class="inline-block hover:text-green-600">@link.Nombre</a></li>
+									<li><a href="@link.Url" class="inline-block hover:text-green-600">@link.Titulo</a></li>
 								}
 							</ul>
 						</div>
@@ -89,7 +89,7 @@
 							<li>
 								<a href="@medio.Url" class="inline-flex items-center justify-center">
 									<img src="@medio.ImagePath"
-										 alt="@medio.Nombre"
+										 alt="@medio.Titulo"
 										 class="object-contain" height="28" />
 								</a>
 							</li>
@@ -104,7 +104,7 @@
 						@foreach (var contacto in MediosDeContacto) {
 							<li>
 								<a href="@contacto.Url" class="inline-flex items-center justify-center">
-									<img src="@contacto.ImagePath" alt="@contacto.Nombre"
+									<img src="@contacto.ImagePath" alt="@contacto.Titulo"
 										 class="object-contain" height="28" />
 								</a>
 							</li>
@@ -131,7 +131,7 @@
 							<li>
 								<a href="@red.Url"
 								   class="inline-flex items-center justify-center">
-									<img src="@red.ImagePath" alt="@red.Nombre"
+									<img src="@red.ImagePath" alt="@red.Titulo"
 										 class="object-contain h-full w-full" height="28" />
 								</a>
 							</li>

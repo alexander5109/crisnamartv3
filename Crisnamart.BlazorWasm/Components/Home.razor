@@ -1,16 +1,16 @@
 ﻿@page "/"
 
-<HomeSliderPromocional Slides="@Domain.PrototipoContenido.GetSlidePromocionalModelEjemplos()" />
+<Home01_SliderPromocional Slides="@Domain.PrototipoContenido.GetSlidePromocionalModelEjemplos()" />
 
-<HomeCategoriasDestacados Categorias="@Domain.PrototipoContenido.GetCategoriaModelDestacadasEjemplos()" />
+<Home02_CategoriasDestacados Categorias="@Domain.PrototipoContenido.GetCategoriaModelDestacadasEjemplos()" />
 
-<HomePromocion Promociones="@Domain.PrototipoContenido.GetPromocionModelEjemplos()" />
+<Home03_PromocionesYDescuentos Promociones="@Domain.PrototipoContenido.GetPromocionModelEjemplos()" />
 
-<HomeProductosPopulares ProductosPopulares="@Domain.PrototipoContenido.GetLocalProductEjemplos()" />
+<Home04_MasVendidos ProductosPopulares="@Domain.PrototipoContenido.GetLocalProductEjemplos()" />
 
-<HomeDailyBestSells Items="@Domain.PrototipoContenido.GetProductCardModelEjemplos()" Banner="@Domain.PrototipoContenido.GetPromoBannerModelEjemplo()" />
+<Home05_OfertasDiarias Items="@Domain.PrototipoContenido.GetProductCardModelEjemplos()" Banner="@Domain.PrototipoContenido.GetPromoBannerModelEjemplo()" />
 
-<HomePropuestaDeValor Propuestas="@Domain.PrototipoContenido.GetPropuestaValorEjemplos()" />
+<Home06_PropuestaDeValor Propuestas="@Domain.PrototipoContenido.GetPropuestaValorEjemplos()" />
 
-<HomeModalProduct Product="@Domain.PrototipoContenido.GetProductDetailsModelEjemplo()" />
+@* <ProductoModal Product="@Domain.PrototipoContenido.GetProductDetailsModelEjemplo()" /> *@
 

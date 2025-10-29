@@ -32,11 +32,11 @@
 					@if (Banner is not null)
 					{
 						<div class="pt-8 px-6 rounded-lg"
-							 style="background: url(@Banner.ImageUrl) no-repeat; background-size: cover; height: 470px">
+							 style="background: url(@Banner.ImagePath) no-repeat; background-size: cover; height: 470px">
 							<div class="flex flex-col gap-5 text-white">
 								<div class="flex flex-col gap-2">
 									<h3 class="text-lg text-white">@Banner.Titulo</h3>
-									<p class="text-white text-base">@Banner.Description</p>
+									<p class="text-white text-base">@Banner.Descripcion</p>
 								</div>
 								<div>
 									<a href="@Banner.Link" class="btn inline-flex items-center bg-green-600 text-white">@Banner.ButtonText</a>
@@ -56,7 +56,7 @@
 								<div class="flex-auto p-4">
 									<div class="text-center relative flex justify-center">
 										<a href="@item.Link">
-											<img src="@item.ImageUrl" alt="@item.Titulo" class="mb-3 m-auto max-w-full h-auto" />
+											<img src="@item.ImagePath" alt="@item.Titulo" class="mb-3 m-auto max-w-full h-auto" />
 										</a>
 									</div>
 

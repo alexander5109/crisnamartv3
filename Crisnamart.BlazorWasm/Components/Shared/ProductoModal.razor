@@ -22,7 +22,7 @@
 						<div class="md:w-1/2">
 							<!-- imágenes principales -->
 							<div class="product productModal" id="productModal">
-								@foreach (var img in Product.ImageUrls) {
+								@foreach (var img in Product.ImagePaths) {
 									<div class="zoom" style=@($"background-image: url({img})")>
 										<img src="@img" alt="@Product.Titulo" />
 									</div>
@@ -32,7 +32,7 @@
 							<!-- thumbnails -->
 							<div class="product-tools">
 								<div class="thumbnails flex gap-3" id="productModalThumbnails">
-									@foreach (var img in Product.ImageUrls) {
+									@foreach (var img in Product.ImagePaths) {
 										<div class="w-1/4">
 											<div class="thumbnails-img">
 												<img src="@img" alt="@Product.Titulo" />
@@ -74,7 +74,7 @@
 									<hr />
 
 									<div>
-										<p>@Product.Description</p>
+										<p>@Product.Descripcion</p>
 									</div>
 
 									<!-- selector de cantidad y acciones -->

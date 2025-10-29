@@ -2,6 +2,11 @@
 @code {
 	[Parameter]
 	public List<Domain.CategoriaModel> Categorias { get; set; } = new();
+
+	// public List<string> Botones = new
+	// {
+		
+	// };
 }
 
 
@@ -217,7 +222,7 @@
 							</button>
 							<ul class="dropdown-menu">
 								@foreach (var category in Categorias) {
-									<li><a class="dropdown-item" href="Productos">@category.Nombre</a></li>
+									<li><a class="dropdown-item" href="Productos">@category.Titulo</a></li>
 								}
 							</ul>
 						</div>

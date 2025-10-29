@@ -14,7 +14,7 @@
                           autoplay-delay="3000">
 
             @foreach (var slide in Slides) {
-                <swiper-slide style="background: url(@slide.ImagenUrl) no-repeat; background-size: cover; border-radius:0.5rem; background-position: center">
+                <swiper-slide style="background: url(@slide.ImagePath) no-repeat; background-size: cover; border-radius:0.5rem; background-position: center">
                     <div class="@clasesInternas">
                         <span class="inline-block p-2 text-sm align-baseline leading-none rounded-lg bg-yellow-500 text-gray-900 font-semibold">
                             @slide.Subtitulo
