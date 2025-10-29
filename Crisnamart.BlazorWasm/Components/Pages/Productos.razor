@@ -8,8 +8,8 @@ Hola?
 
 
 
-<CategoriasDestacados Categorias="@Domain.PrototipoContenido.GetCategoriaModelDestacadasEjemplos()" />
+<Productos_CategoriasDestacadas Categorias="@Domain.PrototipoContenido.GetCategoriasDestacadas()" />
 
-<ProductosGrid ProductosPopulares="@Domain.PrototipoContenido.GetLocalProductEjemplos()" />
+<Productos_Grid ProductosPopulares="@Domain.PrototipoContenido.GetProductosForGrid()" />
 
-<ProductoModal Product="@Domain.PrototipoContenido.GetProductDetailsModelEjemplo()" />
+<ProductoModal Product="@Domain.PrototipoContenido.GetProductoModal()" />

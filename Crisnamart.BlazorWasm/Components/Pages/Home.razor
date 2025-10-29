@@ -1,7 +1,7 @@
 ﻿@page "/"
 
-<Home01_SliderPromocional Slides="@Domain.PrototipoContenido.GetSlidePromocionalModelEjemplos()" />
+<Home_SliderPromocional Slides="@Domain.PrototipoContenido.GetPublicidadSlides()" />
 
-<Home03_PromocionesYDescuentos Promociones="@Domain.PrototipoContenido.GetPromocionModelEjemplos()" />
+<Home_PromocionesYDescuentos Promociones="@Domain.PrototipoContenido.GetPromocionesYDescuentos()" />
 
-<Home05_OfertasDiarias Items="@Domain.PrototipoContenido.GetProductCardModelEjemplos()" Banner="@Domain.PrototipoContenido.GetPromoBannerModelEjemplo()" />
+<Home_OfertasDiarias Items="@Domain.PrototipoContenido.GetOfertasDiarias()" Banner="@Domain.PrototipoContenido.GetPromoBannerModelEjemplo()" />

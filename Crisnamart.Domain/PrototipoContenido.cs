@@ -4,7 +4,7 @@ public class PrototipoContenido {
 	// -------------------------------- -----------------------  --------------------------------  //
 	// -------------------------------- Product related samples  --------------------------------  //
 	// -------------------------------- -----------------------  --------------------------------  //
-	public static ProductDetailsModel GetProductDetailsModelEjemplo() => new() {
+	public static ProductDetailsModel GetProductoModal() => new() {
 		Id = 100,
 		Titulo = "Set de Vajilla Clásica - Crisnamart",
 		Categoria = "Vajilla y Cubiertos",
@@ -27,7 +27,7 @@ public class PrototipoContenido {
 		Link = "#!"
 	};
 
-	public static List<ProductCardModel> GetProductCardModelEjemplos() => [
+	public static List<ProductCardModel> GetOfertasDiarias() => [
 		new ProductCardModel {
 			Id =11,
 			Titulo = "Pack de Vasos de Vidrio",
@@ -69,7 +69,7 @@ public class PrototipoContenido {
 		}
 	];
 
-	public static List<LocalProduct> GetLocalProductEjemplos() => [
+	public static List<LocalProduct> GetProductosForGrid() => [
 		new LocalProduct { Id =1, Titulo = "Juego de Cucharas de Acero (12u)", Categoria = "Bazar - Cocina", ImagePath = "images/products/product-img-1.jpg", Price =180, OldPrice =240, Rating =4.5, RatingCount =149, Badge = "Oferta" },
 		new LocalProduct { Id =2, Titulo = "Set de Tazas Cerámicas (6u)", Categoria = "Bazar - Hogar", ImagePath = "images/products/product-img-2.jpg", OldPrice =240, Price =240, Rating =4.5, RatingCount =25, Badge = "14%" },
 		new LocalProduct { Id =3, Titulo = "Porta Velas Decorativo", Categoria = "Bazar - Decoración", ImagePath = "images/products/product-img-3.jpg", Price =320, OldPrice =350, Rating =5, RatingCount =469, Badge = "" },
@@ -83,7 +83,7 @@ public class PrototipoContenido {
 	// -------------------------------- -----------------------  --------------------------------  //
 	// -------------------------------- Product related samples  --------------------------------  //
 	// -------------------------------- -----------------------  --------------------------------  //
-	
+
 	public static PromoBannerModel GetPromoBannerModelEjemplo() => new() {
 		Titulo = "Promoción Mayorista - Lotes Seleccionados",
 		Descripcion = "Descuentos especiales por compra por mayor en artículos de bazar. Ideal para reposición de locales y distribuidores.",
@@ -92,7 +92,7 @@ public class PrototipoContenido {
 		Link = "#!"
 	};
 
-	public static List<PromocionModel> GetPromocionModelEjemplos() => [
+	public static List<PromocionModel> GetPromocionesYDescuentos() => [
 		new PromocionModel {
 			Titulo = "Stock Mayorista",
 			Descuento =30,
@@ -109,7 +109,7 @@ public class PrototipoContenido {
 		}
 	];
 
-	public static List<SlidePromocionalModel> GetSlidePromocionalModelEjemplos() => [
+	public static List<SlidePromocionalModel> GetPublicidadSlides() => [
 		new SlidePromocionalModel {
 			ImagePath = "images/slider/slide-1.jpg",
 			Subtitulo = "Apertura: Descuentos por volumen",
@@ -128,7 +128,7 @@ public class PrototipoContenido {
 		}
 	];
 
-	public static List<CategoriaModel> GetCategoriaModelEjemplos() => [
+	public static List<CategoriaModel> GetCategorias() => [
 		new CategoriaModel { Id = "1001", Titulo = "Artículos de Cocina", ImagePath = "images/category/category-dairy-bread-eggs.jpg", Link = "#!" },
 		new CategoriaModel { Id = "1002", Titulo = "Vajilla y Cubiertos", ImagePath = "images/category/category-snack-munchies.jpg", Link = "#!" },
 		new CategoriaModel { Id = "1003", Titulo = "Pequeños Electrodomésticos", ImagePath = "images/category/category-bakery-biscuits.jpg", Link = "#!" },
@@ -141,13 +141,13 @@ public class PrototipoContenido {
 		new CategoriaModel { Id = "1000", Titulo = "Artículos Infantiles", ImagePath = "images/category/category-pet-care.jpg", Link = "#!" }
 	];
 
-	public static List<CategoriaModel> GetCategoriaModelDestacadasEjemplos() => [
-		.. GetCategoriaModelEjemplos()
+	public static List<CategoriaModel> GetCategoriasDestacadas() => [
+		.. GetCategorias()
 		.Where(x => new[] { "1001", "1002", "1003", "1004", "1005", "1006"}
 		.Contains(x.Id))
 	];
 
-	public static List<PropuestaValor> GetPropuestaValorEjemplos() => [
+	public static List<PropuestaValor> GetPropuestaValor() => [
 		new PropuestaValor{
 			Icono = "images/icons/clock.svg",
 			Titulo = "Entrega rápida y confiable",
@@ -167,7 +167,7 @@ public class PrototipoContenido {
 		}
 	];
 
-	public static List<FooterColumn> GetFooterColumnsEjemplos() => [
+	public static List<FooterColumn> GetFooterColumns() => [
 		new FooterColumn {
 			Titulo = "Categorías",
 			Enlaces = [
@@ -207,25 +207,25 @@ public class PrototipoContenido {
 	];
 
 
-	public static List<IconoConEnlace> GetMediosDePagoEjemplo() => new(){
+	public static List<IconoConEnlace> GetMediosDePago() => new(){
 		new IconoConEnlace { Titulo = "MercadoPago", ImagePath = "images/payment/mp_28.svg", Url = "#!"  },
 		new IconoConEnlace { Titulo = "Visa", ImagePath = "images/payment/visa.svg", Url = "#!"  },
 		new IconoConEnlace { Titulo = "Mastercard", ImagePath = "images/payment/mastercard.svg", Url = "#!"  },
 		//new IconoConEnlace { Titulo = "PayPal", ImagePath = "images/payment/paypal.svg", Url = "#!"  },
 	};
 
-	public static List<IconoConEnlace> GetRedesSocialesEjemplo() => new(){
+	public static List<IconoConEnlace> GetRedesSociales() => new(){
 		new() { Titulo = "Facebook", ImagePath = "images/social/28x28/facebook.png", Url = "https://www.facebook.com/" },
 		new() { Titulo = "X (Twitter)", ImagePath = "images/social/28x28/x.png", Url = "https://x.com/" },
 		new() { Titulo = "Instagram", ImagePath = "images/social/28x28/instagram.png", Url = "https://www.instagram.com/" },
 	};
 
-	public static List<IconoConEnlace> GetMediosDeContactoEjemplo() => new(){
+	public static List<IconoConEnlace> GetMediosDeContacto() => new(){
 		new IconoConEnlace{ Titulo = "WhatsApp", ImagePath = "images/contact/whatsapp_28.png", Url = "https://wa.me/541173624473" },
 		new IconoConEnlace{ Titulo = "Email", ImagePath = "images/contact/email_28.svg", Url = "mailto:contacto@crisnamart.com" }
 	};
 
-	public static FooterTrademark GetTrademarkEjemplo() => new() {
+	public static FooterTrademark GetFooterParrafo() => new() {
 		Empresa = "Crisnamart",
 		Copyright = "Todos los derechos reservados.",
 		Creditos = "Plantilla Tailwind-eCommerce adaptada por Seling Alexander."
