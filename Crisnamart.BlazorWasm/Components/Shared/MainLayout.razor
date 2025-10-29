@@ -2,7 +2,6 @@
 @code{
 
 	List<Domain.CategoriaModel> categorias = Domain.PrototipoContenido.GetCategorias();
-	List<Domain.FooterColumn> footerColumns = Domain.PrototipoContenido.GetFooterColumns();
 }
 
 
@@ -16,9 +15,11 @@
 </main>
 
 
-<Footer Columns="@Domain.PrototipoContenido.GetFooterColumns()"
-		MediosDePago="@Domain.PrototipoContenido.GetMediosDePago()"
-		RedesSociales="@Domain.PrototipoContenido.GetRedesSociales()"
-		MediosDeContacto="@Domain.PrototipoContenido.GetMediosDeContacto()"
-		FooterTrademark1="@Domain.PrototipoContenido.GetFooterParrafo()" />
+<Footer 
+	Columns="@Domain.PrototipoContenido.GetFooterColumns()"
+	MediosDePago="@Domain.PrototipoContenido.GetMediosDePago()"
+	RedesSociales="@Domain.PrototipoContenido.GetRedesSociales()"
+	MediosDeContacto="@Domain.PrototipoContenido.GetMediosDeContacto()"
+	FooterTrademark1="@Domain.PrototipoContenido.GetFooterParrafo()" 
+/>
 

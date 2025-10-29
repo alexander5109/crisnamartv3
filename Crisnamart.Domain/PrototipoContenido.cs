@@ -121,24 +121,11 @@ public class PrototipoContenido {
 		new SlidePromocionalModel {
 			ImagePath = "images/slider/slider-2.jpg",
 			Subtitulo = "Envío gratuito por compras superiores",
-			TituloHtml = "Envíos especiales<br/>para pedidos mayores",
+			TituloHtml = "Envíos acorde al cliente",
 			Descripcion = "Coordinamos envíos y entregas para distribuidores y comercios. Consultá condiciones y zonas de cobertura.",
 			TextoBoton = "Consultar envíos",
 			Link = "#!"
 		}
-	];
-
-	public static List<CategoriaModel> GetCategorias() => [
-		new CategoriaModel { Id = "1001", Titulo = "Artículos de Cocina", ImagePath = "images/category/category-dairy-bread-eggs.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1002", Titulo = "Vajilla y Cubiertos", ImagePath = "images/category/category-snack-munchies.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1003", Titulo = "Pequeños Electrodomésticos", ImagePath = "images/category/category-bakery-biscuits.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1004", Titulo = "Hogar y Organización", ImagePath = "images/category/category-instant-food.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1005", Titulo = "Decoración y Ambientación", ImagePath = "images/category/category-tea-coffee-drinks.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1006", Titulo = "Jardín y Camping", ImagePath = "images/category/category-atta-rice-dal.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1007", Titulo = "Mascotas y Cuidado", ImagePath = "images/category/category-baby-care.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1008", Titulo = "Carpintería", ImagePath = "images/category/category-chicken-meat-fish.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1009", Titulo = "Limpieza", ImagePath = "images/category/category-cleaning-essentials.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1000", Titulo = "Artículos Infantiles", ImagePath = "images/category/category-pet-care.jpg", Link = "#!" }
 	];
 
 	public static List<CategoriaModel> GetCategoriasDestacadas() => [
@@ -167,16 +154,31 @@ public class PrototipoContenido {
 		}
 	];
 
+	public static List<CategoriaModel> GetCategorias() => [
+		new CategoriaModel { Id = "1001", Titulo = "Artículos de Cocina", ImagePath = "images/category/category-dairy-bread-eggs.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1002", Titulo = "Vajilla y Cubiertos", ImagePath = "images/category/category-snack-munchies.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1003", Titulo = "Pequeños Electrodomésticos", ImagePath = "images/category/category-bakery-biscuits.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1004", Titulo = "Hogar y Organización", ImagePath = "images/category/category-instant-food.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1005", Titulo = "Decoración y Ambientación", ImagePath = "images/category/category-tea-coffee-drinks.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1006", Titulo = "Jardín y Camping", ImagePath = "images/category/category-atta-rice-dal.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1007", Titulo = "Mascotas y Cuidado", ImagePath = "images/category/category-baby-care.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1008", Titulo = "Carpintería", ImagePath = "images/category/category-chicken-meat-fish.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1009", Titulo = "Limpieza", ImagePath = "images/category/category-cleaning-essentials.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1000", Titulo = "Artículos Infantiles", ImagePath = "images/category/category-pet-care.jpg", Link = "#!" }
+	];
+
+	public static List<Enlace> GetCategoriasAsEnlaces() =>
+		GetCategorias()
+			.Select(c => new Enlace {
+				Titulo = c.Titulo,
+				Url = c.Link
+			})
+			.ToList();
+
 	public static List<FooterColumn> GetFooterColumns() => [
 		new FooterColumn {
 			Titulo = "Categorías",
-			Enlaces = [
-				new Enlace { Titulo = "Artículos de Cocina", Url = "#!" },
-				new Enlace { Titulo = "Vajilla y Cubiertos", Url = "#!" },
-				new Enlace { Titulo = "Pequeños Electrodomésticos", Url = "#!" },
-				new Enlace { Titulo = "Hogar y Organización", Url = "#!" },
-				new Enlace { Titulo = "Decoración", Url = "#!" }
-			]
+			Enlaces = GetCategoriasAsEnlaces()
 		},
 		new FooterColumn {
 			Titulo = "Información",

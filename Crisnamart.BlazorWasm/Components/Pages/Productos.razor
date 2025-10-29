@@ -1,15 +1,18 @@
 ﻿@page "/Productos"
 
-Hola?
+<section>
+	<button type="button"
+			class="px-6 py-3 bg-green-600 text-white font-semibold rounded-md shadow hover:bg-green-700 transition"
+			data-bs-toggle="modal"
+			data-bs-target="#quickViewModal">
+		Abrir modal
+	</button>
 
-<button type="button" class="btn btn-primary color-black" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-	Abrir modal
-</button>
+	<Productos_CategoriasDestacadas Categorias="@Domain.PrototipoContenido.GetCategoriasDestacadas()" />
+
+	<Productos_Grid ProductosPopulares="@Domain.PrototipoContenido.GetProductosForGrid()" />
+
+	<ProductoModal Product="@Domain.PrototipoContenido.GetProductoModal()" />
 
 
-
-<Productos_CategoriasDestacadas Categorias="@Domain.PrototipoContenido.GetCategoriasDestacadas()" />
-
-<Productos_Grid ProductosPopulares="@Domain.PrototipoContenido.GetProductosForGrid()" />
-
-<ProductoModal Product="@Domain.PrototipoContenido.GetProductoModal()" />
+</section>

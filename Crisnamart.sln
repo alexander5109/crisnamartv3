@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.DB", "Crisnamart
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.Api", "Crisnamart.Api\Crisnamart.Api.csproj", "{9B89C93C-EE54-4F02-AC95-E481E2A3C484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.BlazorClient", "Crisnamart.BlazorClient\Crisnamart.BlazorClient.csproj", "{CB704603-9585-4624-BABE-6AF73CF9E787}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9B89C93C-EE54-4F02-AC95-E481E2A3C484} = {9B89C93C-EE54-4F02-AC95-E481E2A3C484}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.Domain", "Crisnamart.Domain\Crisnamart.Domain.csproj", "{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crisnamart.BlazorWasm", "Crisnamart.BlazorWasm\Crisnamart.BlazorWasm.csproj", "{B6F6D428-5A9B-DB16-E14B-CA92DD307D5C}"
@@ -50,18 +45,6 @@ Global
 		{9B89C93C-EE54-4F02-AC95-E481E2A3C484}.Release|x64.Build.0 = Release|Any CPU
 		{9B89C93C-EE54-4F02-AC95-E481E2A3C484}.Release|x86.ActiveCfg = Release|Any CPU
 		{9B89C93C-EE54-4F02-AC95-E481E2A3C484}.Release|x86.Build.0 = Release|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Debug|x64.Build.0 = Debug|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Debug|x86.Build.0 = Debug|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Release|x64.ActiveCfg = Release|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Release|x64.Build.0 = Release|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Release|x86.ActiveCfg = Release|Any CPU
-		{CB704603-9585-4624-BABE-6AF73CF9E787}.Release|x86.Build.0 = Release|Any CPU
 		{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE3E8EF-FCCC-45E8-8CD4-5BE85AF219EF}.Debug|x64.ActiveCfg = Debug|Any CPU
