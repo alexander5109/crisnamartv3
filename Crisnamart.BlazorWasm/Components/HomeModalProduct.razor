@@ -24,7 +24,7 @@
 							<div class="product productModal" id="productModal">
 								@foreach (var img in Product.ImageUrls) {
 									<div class="zoom" style=@($"background-image: url({img})")>
-										<img src="@img" alt="@Product.Title" />
+										<img src="@img" alt="@Product.Titulo" />
 									</div>
 								}
 							</div>
@@ -35,7 +35,7 @@
 									@foreach (var img in Product.ImageUrls) {
 										<div class="w-1/4">
 											<div class="thumbnails-img">
-												<img src="@img" alt="@Product.Title" />
+												<img src="@img" alt="@Product.Titulo" />
 											</div>
 										</div>
 									}
@@ -46,8 +46,8 @@
 						<div class="md:w-1/2 pr-4 pl-4">
 							<div class="lg:pl-10 mt-6 md:mt-0">
 								<div class="flex flex-col gap-4">
-									<a href="@Product.Link" class="block text-green-600">@Product.Category</a>
-									<h1>@Product.Title</h1>
+									<a href="@Product.Link" class="block text-green-600">@Product.Categoria</a>
+									<h1>@Product.Titulo</h1>
 
 									<div class="flex flex-col gap-2">
 										<div class="flex items-center">

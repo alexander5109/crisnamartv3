@@ -9,8 +9,8 @@
 	private string LogoutLink => "#logout";
 
 	// Modelo de notificación (prototipo)
-	private record NotificationItem(int Id, string Title, string Message, string TimeAgo, string Link, string? AvatarUrl, bool IsActive) {
-		public string Initials => string.IsNullOrEmpty(Title) ? "?" : string.Concat(Title.Split(' ').Select(s => s.Length > 0 ? s[0] : ' ')).ToUpperInvariant();
+	private record NotificationItem(int Id, string Titulo, string Message, string TimeAgo, string Link, string? AvatarUrl, bool IsActive) {
+		public string Initials => string.IsNullOrEmpty(Titulo) ? "?" : string.Concat(Titulo.Split(' ').Select(s => s.Length > 0 ? s[0] : ' ')).ToUpperInvariant();
 	}
 
 	// Modelo menú usuario
@@ -139,7 +139,7 @@
 													}
 													<div class="ms-4">
 														<p class="mb-1">
-															<span class="text-gray-900">@n.Title</span>
+															<span class="text-gray-900">@n.Titulo</span>
 															@n.Message
 														</p>
 														<span class="flex items-center">

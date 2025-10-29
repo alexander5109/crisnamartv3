@@ -1,10 +1,13 @@
 ﻿namespace Crisnamart.Domain;
 
 public class PrototipoContenido {
+	// -------------------------------- -----------------------  --------------------------------  //
+	// -------------------------------- Product related samples  --------------------------------  //
+	// -------------------------------- -----------------------  --------------------------------  //
 	public static ProductDetailsModel GetProductDetailsModelEjemplo() => new() {
 		Id = 100,
-		Title = "Set de Vajilla Clásica - Crisnamart",
-		Category = "Vajilla y Cubiertos",
+		Titulo = "Set de Vajilla Clásica - Crisnamart",
+		Categoria = "Vajilla y Cubiertos",
 		Description = "Set de vajilla de acero inoxidable ideal para comercios y mayoristas. Resistente, fácil de limpiar y con diseño clásico para reposición en mostradores y locales.",
 		Price = 180m,
 		OldPrice = 240m,
@@ -24,14 +27,70 @@ public class PrototipoContenido {
 		Link = "#!"
 	};
 
+	public static List<ProductCardModel> GetProductCardModelEjemplos() => [
+		new ProductCardModel {
+			Id =11,
+			Titulo = "Pack de Vasos de Vidrio",
+			Categoria = "Bazar - Hogar",
+			ImageUrl = "images/products/product-img-11.jpg",
+			Price =130m,
+			OldPrice =180m,
+			Rating =4.5,
+			RatingCount =120,
+			Badge = "Más vendido",
+			Link = "#!",
+			DealEndsAt = new DateTime(2028,10,10)
+		},
+		new ProductCardModel {
+			Id =12,
+			Titulo = "Organizador de Plástico (Caja10)",
+			Categoria = "Bazar - Organización",
+			ImageUrl = "images/products/product-img-12.jpg",
+			Price =95m,
+			OldPrice =120m,
+			Rating =4.5,
+			RatingCount =89,
+			Badge = null,
+			Link = "#!",
+			DealEndsAt = new DateTime(2028,12,9)
+		},
+		new ProductCardModel {
+			Id =13,
+			Titulo = "Lámpara de Mesa - Pie Metálico",
+			Categoria = "Bazar - Iluminación",
+			ImageUrl = "images/products/product-img-13.jpg",
+			Price =130m,
+			OldPrice =180m,
+			Rating =4.5,
+			RatingCount =47,
+			Badge = "Nuevo",
+			Link = "#!",
+			DealEndsAt = new DateTime(2028,11,11)
+		}
+	];
+
+	public static List<LocalProduct> GetLocalProductEjemplos() => [
+		new LocalProduct { Id =1, Titulo = "Juego de Cucharas de Acero (12u)", Categoria = "Bazar - Cocina", ImageUrl = "images/products/product-img-1.jpg", Price =180, OldPrice =240, Rating =4.5, RatingCount =149, Badge = "Oferta" },
+		new LocalProduct { Id =2, Titulo = "Set de Tazas Cerámicas (6u)", Categoria = "Bazar - Hogar", ImageUrl = "images/products/product-img-2.jpg", OldPrice =240, Price =240, Rating =4.5, RatingCount =25, Badge = "14%" },
+		new LocalProduct { Id =3, Titulo = "Porta Velas Decorativo", Categoria = "Bazar - Decoración", ImageUrl = "images/products/product-img-3.jpg", Price =320, OldPrice =350, Rating =5, RatingCount =469, Badge = "" },
+		new LocalProduct { Id =4, Titulo = "Pala para Cocina - Metal", Categoria = "Bazar - Cocina", ImageUrl = "images/products/product-img-4.jpg", Price =30, OldPrice =50, Rating =3.5, RatingCount =456, Badge = "Popular" },
+		new LocalProduct { Id =5, Titulo = "Palangana Plástica Grande", Categoria = "Bazar - Organización", ImageUrl = "images/products/product-img-5.jpg", Price =130, OldPrice =180, Rating =4.5, RatingCount =39, Badge = "" }
+	];
+
+
+
+
+	// -------------------------------- -----------------------  --------------------------------  //
+	// -------------------------------- Product related samples  --------------------------------  //
+	// -------------------------------- -----------------------  --------------------------------  //
+	
 	public static PromoBannerModel GetPromoBannerModelEjemplo() => new() {
-		Title = "Promoción Mayorista - Lotes Seleccionados",
+		Titulo = "Promoción Mayorista - Lotes Seleccionados",
 		Description = "Descuentos especiales por compra por mayor en artículos de bazar. Ideal para reposición de locales y distribuidores.",
 		ImageUrl = "images/banner/banner-deal.jpg",
 		ButtonText = "Ver ofertas",
 		Link = "#!"
 	};
-
 
 	public static List<PromocionModel> GetPromocionModelEjemplos() => [
 		new PromocionModel {
@@ -49,61 +108,6 @@ public class PrototipoContenido {
 			TextoBoton = "Ver precios"
 		}
 	];
-
-
-
-
-	public static List<ProductCardModel> GetProductCardModelEjemplos() => [
-		new ProductCardModel {
-			Id =11,
-			Title = "Pack de Vasos de Vidrio",
-			Category = "Bazar - Hogar",
-			ImageUrl = "images/products/product-img-11.jpg",
-			Price =130m,
-			OldPrice =180m,
-			Rating =4.5,
-			RatingCount =120,
-			Badge = "Más vendido",
-			Link = "#!",
-			DealEndsAt = new DateTime(2028,10,10)
-		},
-		new ProductCardModel {
-			Id =12,
-			Title = "Organizador de Plástico (Caja10)",
-			Category = "Bazar - Organización",
-			ImageUrl = "images/products/product-img-12.jpg",
-			Price =95m,
-			OldPrice =120m,
-			Rating =4.5,
-			RatingCount =89,
-			Badge = null,
-			Link = "#!",
-			DealEndsAt = new DateTime(2028,12,9)
-		},
-		new ProductCardModel {
-			Id =13,
-			Title = "Lámpara de Mesa - Pie Metálico",
-			Category = "Bazar - Iluminación",
-			ImageUrl = "images/products/product-img-13.jpg",
-			Price =130m,
-			OldPrice =180m,
-			Rating =4.5,
-			RatingCount =47,
-			Badge = "Nuevo",
-			Link = "#!",
-			DealEndsAt = new DateTime(2028,11,11)
-		}
-	];
-
-	public static List<LocalProduct> GetLocalProductEjemplos() => [
-		new LocalProduct { Id =1, Title = "Juego de Cucharas de Acero (12u)", Category = "Bazar - Cocina", ImageUrl = "images/products/product-img-1.jpg", Price =180, OldPrice =240, Rating =4.5, RatingCount =149, Badge = "Oferta" },
-		new LocalProduct { Id =2, Title = "Set de Tazas Cerámicas (6u)", Category = "Bazar - Hogar", ImageUrl = "images/products/product-img-2.jpg", OldPrice =240, Price =240, Rating =4.5, RatingCount =25, Badge = "14%" },
-		new LocalProduct { Id =3, Title = "Porta Velas Decorativo", Category = "Bazar - Decoración", ImageUrl = "images/products/product-img-3.jpg", Price =320, OldPrice =350, Rating =5, RatingCount =469, Badge = "" },
-		new LocalProduct { Id =4, Title = "Pala para Cocina - Metal", Category = "Bazar - Cocina", ImageUrl = "images/products/product-img-4.jpg", Price =30, OldPrice =50, Rating =3.5, RatingCount =456, Badge = "Popular" },
-		new LocalProduct { Id =5, Title = "Palangana Plástica Grande", Category = "Bazar - Organización", ImageUrl = "images/products/product-img-5.jpg", Price =130, OldPrice =180, Rating =4.5, RatingCount =39, Badge = "" }
-	];
-
-
 
 	public static List<SlidePromocionalModel> GetSlidePromocionalModelEjemplos() => [
 		new SlidePromocionalModel {
@@ -137,10 +141,11 @@ public class PrototipoContenido {
 		new CategoriaModel { Id = "1000", Nombre = "Artículos Infantiles", ImagenUrl = "images/category/category-pet-care.jpg", Link = "#!" }
 	];
 
-	public static List<CategoriaModel> GetCategoriaModelDestacadasEjemplos() =>
-		[.. GetCategoriaModelEjemplos()
+	public static List<CategoriaModel> GetCategoriaModelDestacadasEjemplos() => [
+		.. GetCategoriaModelEjemplos()
 		.Where(x => new[] { "1001", "1002", "1003", "1004", "1005", "1006"}
-		.Contains(x.Id))];
+		.Contains(x.Id))
+	];
 
 	public static List<PropuestaValor> GetPropuestaValorEjemplos() => [
 		new PropuestaValor{
@@ -200,8 +205,6 @@ public class PrototipoContenido {
 			]
 		}
 	];
-
-
 
 
 	public static List<MedioDePago> GetMediosDePagoEjemplo() => new(){
