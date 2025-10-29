@@ -1,8 +1,7 @@
 ﻿@inherits LayoutComponentBase
 @code{
 
-	List<Domain.CategoriaModel> categorias = Domain.PrototipoContenido.GetCategoriaModelEjemplos();
-	List<Domain.FooterColumn> footerColumns = Domain.PrototipoContenido.GetFooterColumnsEjemplos();
+	List<Domain.CategoriaModel> categorias = Domain.PrototipoContenido.GetCategorias();
 }
 
 
@@ -16,9 +15,11 @@
 </main>
 
 
-<Footer Columns="@Domain.PrototipoContenido.GetFooterColumnsEjemplos()"
-		MediosDePago="@Domain.PrototipoContenido.GetMediosDePagoEjemplo()"
-		RedesSociales="@Domain.PrototipoContenido.GetRedesSocialesEjemplo()"
-		MediosDeContacto="@Domain.PrototipoContenido.GetMediosDeContactoEjemplo()"
-		FooterTrademark1="@Domain.PrototipoContenido.GetTrademarkEjemplo()" />
+<Footer 
+	Columns="@Domain.PrototipoContenido.GetFooterColumns()"
+	MediosDePago="@Domain.PrototipoContenido.GetMediosDePago()"
+	RedesSociales="@Domain.PrototipoContenido.GetRedesSociales()"
+	MediosDeContacto="@Domain.PrototipoContenido.GetMediosDeContacto()"
+	FooterTrademark1="@Domain.PrototipoContenido.GetFooterParrafo()" 
+/>
 

@@ -1,0 +1,110 @@
+﻿@inject Microsoft.JSInterop.IJSRuntime JS
+@code {
+	[Parameter]
+	public List<Domain.ProductCardModel>? Items { get; set; }
+
+	[Parameter]
+	public Domain.PromoBannerModel? Banner { get; set; }
+
+	protected override async Task OnAfterRenderAsync(bool firstRender) {
+		if (firstRender) {
+			try {
+				await JS.InvokeVoidAsync("initializeCountdowns");
+			} catch (Exception ex) {
+				Console.Error.WriteLine($"Failed to initialize countdowns: {ex}");
+			}
+		}
+	}
+}
+
+<section>
+	<div class="container">
+		<div class="flex flex-wrap">
+			<div class="md:w-full mb-6">
+				<h2 class="text-lg">Ofertas diarias - Crisnamart</h2>
+			</div>
+		</div>
+
+		<div class="block w-full overflow-x-auto scrolling-touch pb-6">
+			<div class="xl:grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 flex-nowrap flex">
+				<!-- Banner promocional (izquierda) -->
+				<div class="flex-0 block w-full md:w-auto">
+					@if (Banner is not null) {
+						<div class="pt-8 px-6 rounded-lg"
+							 style="background: url(@Banner.ImagePath) no-repeat; background-size: cover; height: 470px">
+							<div class="flex flex-col gap-5 text-white">
+								<div class="flex flex-col gap-2">
+									<h3 class="text-lg text-white">@Banner.Titulo</h3>
+									<p class="text-white text-base">@Banner.Descripcion</p>
+								</div>
+								<div>
+									<a href="@Banner.Link" class="btn inline-flex items-center bg-green-600 text-white">@Banner.ButtonText</a>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+
+				<!-- Productos -->
+				@if (Items is not null) {
+					@foreach (var product in Items) {
+						<div class="flex-0 block w-full md:w-auto">
+							<div class="relative flex flex-col min-w-0 rounded-lg break-words border bg-white border-gray-300 card-product">
+								<div class="flex-auto p-4">
+									<div class="text-center relative flex justify-center">
+										<a href="@product.Link">
+											<img src="@product.ImagePath" alt="@product.Titulo" class="mb-3 m-auto max-w-full h-auto" />
+										</a>
+									</div>
+
+									<div class="flex flex-col gap-3">
+										<a href="@product.Link" class="text-decoration-none text-gray-500">
+											<small>@product.Categoria</small>
+										</a>
+
+										<div class="flex flex-col gap-2">
+											<h3 class="text-base truncate"><a href="@product.Link">@product.Titulo</a></h3>
+
+											<div class="flex justify-between items-center">
+												<div>
+													<span class="text-gray-900 font-semibold">@($"${product.Price}")</span>
+													@if (product.OldPrice is not null) {
+														<span class="line-through text-gray-500">@($" ${product.OldPrice}")</span>
+													}
+												</div>
+
+												<div>
+
+
+													<div class="flex flex-row gap-3">
+														<small class="text-yellow-500 flex items-center">
+															<StarRating Value="@product.Rating" Size="14px" FilledColor="#f59e0b" />
+														</small>
+														<div class="flex flex-row gap-1">
+															<span class="text-gray-500 text-sm">@product.Rating</span>
+															<span class="text-gray-500 text-sm">(@product.RatingCount)</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="grid">
+											<button class="btn bg-green-600 text-white">Agregar al carrito</button>
+										</div>
+
+										@if (product.DealEndsAt is not null) {
+											<div class="flex justify-start text-center w-full">
+												<div class="deals-countdown w-full" data-countdown="@product.DealEndsAt.Value.ToString("yyyy/MM/dd 00:00:00")"></div>
+											</div>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					}
+				}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,53 @@
+﻿@page "/QuienesSomos"
+<PageTitle>Quiénes Somos - Crisnamart</PageTitle>
+
+<section class="bg-gray text-center">
+	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+		<!-- Imagen central al 40% del ancho -->
+		<div class="flex justify-center mb-8">
+			@* <img src="/images/LOGO_CRISNAMART/LOGO.png"
+				 alt="Logo Crisnamart"
+				 class="w-[40vw] max-w-sm object-contain" /> *@
+
+
+			<img src="/images/LOGO_CRISNAMART/LOGO.png"
+				 class="w-2/5 max-w-sm mx-auto block" />
+
+
+
+
+
+		</div>
+
+		<!-- Encabezado -->
+		<h2 class="section-heading mb-2">
+			<span class="section-heading-upper">Sobre Crisnamart</span>
+		</h2>
+
+		<!-- Texto cohesivo -->
+		<div class="text-gray-700 leading-relaxed max-w-3xl mx-auto space-y-6">
+			<p>
+				Crisnamart es una empresa familiar con más de cuatro décadas de trayectoria en el abastecimiento mayorista,
+				comprometida con brindar soluciones ágiles y confiables a comercios y distribuidores.
+			</p>
+			<p>
+				Contamos con atención directa, logística propia y un depósito en González Catán, desde donde coordinamos entregas
+				frecuentes para garantizar la continuidad de stock y fortalecer relaciones comerciales a largo plazo.
+			</p>
+			<p>
+				Nuestro compromiso se basa en la transparencia, el cumplimiento y la rápida respuesta ante solicitudes o reclamos.
+				Trabajamos con proveedores certificados y procesos de control de calidad que aseguran la conformidad de cada envío.
+			</p>
+			<p>
+				Si desea información técnica sobre líneas específicas o condiciones por volumen, puede comunicarse a través del
+				formulario de contacto. Le brindaremos asistencia personalizada y opciones adaptadas a su necesidad comercial.
+			</p>
+		</div>
+
+		<!-- Propuesta de valor -->
+		<div class="mt-12">
+			<QuienesSomos_PropuestasDeValor Propuestas="@Domain.PrototipoContenido.GetPropuestaValor()" />
+		</div>
+	</div>
+</section>

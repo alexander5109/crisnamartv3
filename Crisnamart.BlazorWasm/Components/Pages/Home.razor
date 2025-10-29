@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<section>
+
+	<Home_SliderPromocional Slides="@Domain.PrototipoContenido.GetPublicidadSlides()" />
+
+	<Home_PromocionesYDescuentos Promociones="@Domain.PrototipoContenido.GetPromocionesYDescuentos()" />
+
+	<Home_OfertasDiarias Items="@Domain.PrototipoContenido.GetOfertasDiarias()" Banner="@Domain.PrototipoContenido.GetPromoBannerModelEjemplo()" />
+
+
+
+</section>
