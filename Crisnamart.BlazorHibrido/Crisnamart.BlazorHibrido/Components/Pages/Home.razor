@@ -2,6 +2,14 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<section>
 
-Welcome to your new app.
+	<Home_SliderPromocional Slides="@Domain.PrototipoContenido.GetPublicidadSlides()" />
+
+	<Home_PromocionesYDescuentos Promociones="@Domain.PrototipoContenido.GetPromocionesYDescuentos()" />
+
+	<Home_OfertasDiarias Items="@Domain.PrototipoContenido.GetOfertasDiarias()" Banner="@Domain.PrototipoContenido.GetPromoBannerModelEjemplo()" />
+
+
+
+</section>
