@@ -112,18 +112,18 @@ public class PrototipoContenido {
 	public static List<SlidePromocionalModel> GetPublicidadSlides() => [
 		new SlidePromocionalModel {
 			ImagePath = "images/slider/slide-1.jpg",
-			Subtitulo = "Apertura: Descuentos por volumen",
-			TituloHtml = "Bazar Mayorista<br/>Calidad y Precio",
-			Descripcion = "Amplio stock de artículos de bazar para mayoristas y comercios. Compras al por mayor con precios especiales.",
-			TextoBoton = "Ver productos",
+			Subtitulo = "Mayorista de artículos de bazar",
+			TituloHtml = "Calidad, trayectoria<br/>y atención personalizada",
+			Descripcion = "Más de 40 años abasteciendo comercios y revendedores con los mejores precios del mercado.",
+			TextoBoton = "Ver catálogo mayorista",
 			Link = "#!"
 		},
 		new SlidePromocionalModel {
-			ImagePath = "images/slider/slider-2.jpg",
-			Subtitulo = "Envío gratuito por compras superiores",
-			TituloHtml = "Envíos acorde al cliente",
-			Descripcion = "Coordinamos envíos y entregas para distribuidores y comercios. Consultá condiciones y zonas de cobertura.",
-			TextoBoton = "Consultar envíos",
+			ImagePath = "images/slider/slide-2.jpg",
+			Subtitulo = "Entregas directas y envíos al interior",
+			TituloHtml = "Coordinamos tu pedido<br/>según tu ubicación",
+			Descripcion = "Retirá en nuestro depósito o recibí tu pedido por transporte o correo en todo el país.",
+			TextoBoton = "Consultar formas de entrega",
 			Link = "#!"
 		}
 	];
