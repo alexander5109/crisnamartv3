@@ -2,15 +2,19 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copy all .csproj files and restore
+# Copy server & client project files
 COPY Crisnamart.BlazorHibrido/Crisnamart.BlazorHibrido/*.csproj Crisnamart.BlazorHibrido/
 COPY Crisnamart.BlazorHibrido/Crisnamart.BlazorHibrido.Client/*.csproj Crisnamart.BlazorHibrido.Client/
-COPY Crisnamart.Domain/*.csproj Crisnamart.Domain/
+COPY Crisnamart.Domain/ Crisnamart.Domain/
+
+# Restore server project
 RUN dotnet restore Crisnamart.BlazorHibrido/Crisnamart.BlazorHibrido.csproj
 
-# Copy everything else and build
+# Copy the rest of the source code
 COPY . .
-RUN dotnet publish Crisnamart.BlazorHibrido/Crisnamart.BlazorHibrido.csproj -c Release -o /app/publish
+
+# Publish server project only
+RUN dotnet publish Crisnamart.BlazorHibrido/Crisnamart.BlazorHibrido.csproj -c Release -o /app/publish /p:UseAppHost=false
 
 # ===== RUNTIME STAGE =====
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
