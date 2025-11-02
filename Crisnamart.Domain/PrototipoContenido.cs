@@ -74,7 +74,9 @@ public class PrototipoContenido {
 		new LocalProduct { Id =2, Titulo = "Set de Tazas Cerámicas (6u)", Categoria = "Bazar - Hogar", ImagePath = "images/products/product-img-2.jpg", OldPrice =240, Price =240, Rating =4.5, RatingCount =25, Badge = "14%" },
 		new LocalProduct { Id =3, Titulo = "Porta Velas Decorativo", Categoria = "Bazar - Decoración", ImagePath = "images/products/product-img-3.jpg", Price =320, OldPrice =350, Rating =5, RatingCount =469, Badge = "" },
 		new LocalProduct { Id =4, Titulo = "Pala para Cocina - Metal", Categoria = "Bazar - Cocina", ImagePath = "images/products/product-img-4.jpg", Price =30, OldPrice =50, Rating =3.5, RatingCount =456, Badge = "Popular" },
-		new LocalProduct { Id =5, Titulo = "Palangana Plástica Grande", Categoria = "Bazar - Organización", ImagePath = "images/products/product-img-5.jpg", Price =130, OldPrice =180, Rating =4.5, RatingCount =39, Badge = "" }
+		new LocalProduct { Id =5, Titulo = "Palangana Plástica Grande", Categoria = "Bazar - Organización", ImagePath = "images/products/product-img-5.jpg", Price =130, OldPrice =180, Rating =4.0, RatingCount =39, Badge = "" },
+		new LocalProduct { Id =6, Titulo = "Cafetera Hudson", Categoria = "Bazar - Cocina", ImagePath = "images/products/product-img-1.jpg", Price =330, OldPrice =280, Rating =4.7, RatingCount =655, Badge = "Popular" },
+		new LocalProduct { Id =7, Titulo = "Set de Cubiertos Tramontina", Categoria = "Bazar - Cocina", ImagePath = "images/products/product-img-2.jpg", Price =150, OldPrice =120, Rating =3.7, RatingCount =453, Badge = "7%" },
 	];
 
 
@@ -130,7 +132,7 @@ public class PrototipoContenido {
 
 	public static List<CategoriaModel> GetCategoriasDestacadas() => [
 		.. GetCategorias()
-		.Where(x => new[] { "1001", "1002", "1003", "1004", "1005", "1006"}
+		.Where(x => new[] { "1001", "1002", "1003", "1004", "1005", "1006", "1007"}
 		.Contains(x.Id))
 	];
 

@@ -1,5 +1,4 @@
 ﻿@page "/Productos"
-@rendermode InteractiveServer
 
 <section>
 	<button type="button"
@@ -9,7 +8,9 @@
 		Abrir modal
 	</button>
 
-	<Productos_CategoriasDestacadas Categorias="@Domain.PrototipoContenido.GetCategoriasDestacadas()" />
+	<InteractiveServer prerender="false">
+		<Productos_CategoriasDestacadas Categorias="@Domain.PrototipoContenido.GetCategoriasDestacadas()" />
+	</InteractiveServer>
 
 	<Productos_Grid ProductosPopulares="@Domain.PrototipoContenido.GetProductosForGrid()" />
 
