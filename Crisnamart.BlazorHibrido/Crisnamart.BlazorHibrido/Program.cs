@@ -1,32 +1,23 @@
-using Crisnamart.BlazorHibrido.Client.Pages;
 using Crisnamart.BlazorHibrido.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents()
-	.AddInteractiveServerComponents()
-	.AddInteractiveWebAssemblyComponents();
+builder.Services.AddRazorComponents(); // Only base Razor rendering
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) {
-	app.UseWebAssemblyDebugging();
-} else {
+if (!app.Environment.IsDevelopment()) {
 	app.UseExceptionHandler("/Error", createScopeForErrors: true);
-	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 	app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-	.AddInteractiveServerRenderMode()
-	.AddInteractiveWebAssemblyRenderMode()
-	.AddAdditionalAssemblies(typeof(Crisnamart.BlazorHibrido.Client._Imports).Assembly);
+// Map the root Razor component
+app.MapRazorComponents<App>();
 
 app.Run();

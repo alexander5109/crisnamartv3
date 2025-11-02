@@ -8,9 +8,7 @@
 		Abrir modal
 	</button>
 
-	<InteractiveServer prerender="false">
-		<Productos_CategoriasDestacadas Categorias="@Domain.PrototipoContenido.GetCategoriasDestacadas()" />
-	</InteractiveServer>
+	<Productos_CategoriasDestacadas Categorias="@Domain.PrototipoContenido.GetCategoriasDestacadas()" />
 
 	<Productos_Grid ProductosPopulares="@Domain.PrototipoContenido.GetProductosForGrid()" />
 

@@ -13,7 +13,7 @@
 	<HeadOutlet />
 
 
-	
+
 	<!-- 🧱 Fonts & Icon libs -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,26 +32,21 @@
 
 <body>
 	<Routes />
-	<!-- 🧱 Core JS dependencies (Bootstrap first) -->
+
+	<!-- 🧩 Swiper must come first so elements are defined before Blazor -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+
+	<!-- 🧱 Core JS dependencies -->
 	<script src="js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="js/simplebar/dist/simplebar.min.js"></script>
 
-	<!-- Swiper element bundle from CDN -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
-
-	<!-- 🧩 FreshCart behavior scripts (load before Blazor so JS functions are defined) -->
+	<!-- 🧩 FreshCart behavior scripts -->
 	<script src="js/vendors/countdown.js"></script>
 	<script src="js/vendors/zoom.js"></script>
 	<script src="js/vendors/validation.js"></script>
 
 	<!-- 🧠 FreshCart main logic -->
 	<script src="js/main.js"></script>
-
-	<!-- 🧩 Blazor WebAssembly runtime (last) -->
-	<script src="_framework/blazor.web.js"></script>
-	<script>navigator.serviceWorker.register('service-worker.js');</script>
-
-
 </body>
 
 </html>
