@@ -155,16 +155,16 @@ public class PrototipoContenido {
 	];
 
 	public static List<CategoriaModel> GetCategorias() => [
-		new CategoriaModel { Id = "1001", Titulo = "Artículos de Cocina", ImagePath = "images/category/category-dairy-bread-eggs.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1002", Titulo = "Vajilla y Cubiertos", ImagePath = "images/category/category-snack-munchies.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1003", Titulo = "Pequeños Electrodomésticos", ImagePath = "images/category/category-bakery-biscuits.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1004", Titulo = "Hogar y Organización", ImagePath = "images/category/category-instant-food.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1005", Titulo = "Decoración y Ambientación", ImagePath = "images/category/category-tea-coffee-drinks.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1006", Titulo = "Jardín y Camping", ImagePath = "images/category/category-atta-rice-dal.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1007", Titulo = "Mascotas y Cuidado", ImagePath = "images/category/category-baby-care.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1008", Titulo = "Carpintería", ImagePath = "images/category/category-chicken-meat-fish.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1009", Titulo = "Limpieza", ImagePath = "images/category/category-cleaning-essentials.jpg", Link = "#!" },
-		new CategoriaModel { Id = "1000", Titulo = "Artículos Infantiles", ImagePath = "images/category/category-pet-care.jpg", Link = "#!" }
+		new CategoriaModel { Id = "1001", Titulo = "Artículos de Cocina", ImagePath = "images/category/category-1.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1002", Titulo = "Vajilla y Cubiertos", ImagePath = "images/category/category-2.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1003", Titulo = "Pequeños Electrodomésticos", ImagePath = "images/category/category-3.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1004", Titulo = "Hogar y Organización", ImagePath = "images/category/category-4.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1005", Titulo = "Decoración y Ambientación", ImagePath = "images/category/category-5.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1006", Titulo = "Jardín y Camping", ImagePath = "images/category/category-6.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1007", Titulo = "Mascotas y Cuidado", ImagePath = "images/category/category-7.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1008", Titulo = "Carpintería", ImagePath = "images/category/category-chicken-8.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1009", Titulo = "Limpieza", ImagePath = "images/category/category-9.jpg", Link = "#!" },
+		new CategoriaModel { Id = "1010", Titulo = "Artículos Infantiles", ImagePath = "images/category/category-10.jpg", Link = "#!" }
 	];
 
 	public static List<Enlace> GetCategoriasAsEnlaces() =>
