@@ -113,7 +113,7 @@ public class PrototipoContenido {
 
 	public static List<SlidePromocionalModel> GetPublicidadSlides() => [
 		new SlidePromocionalModel {
-			ImagePath = "images/slider/slide1.png",
+			ImagePath = "images/slider/slider-2_new.jpg",
 			Subtitulo = "Mayorista de artículos de bazar",
 			TituloHtml = "Calidad, trayectoria<br/>y atención personalizada",
 			Descripcion = "Más de 40 años abasteciendo comercios y revendedores con los mejores precios del mercado.",
@@ -121,7 +121,7 @@ public class PrototipoContenido {
 			Link = "#!"
 		},
 		new SlidePromocionalModel {
-			ImagePath = "images/slider/slide2.png",
+			ImagePath = "images/slider/slider-3_new.jpg",
 			Subtitulo = "Entregas directas y envíos al interior",
 			TituloHtml = "Coordinamos tu pedido<br/>según tu ubicación",
 			Descripcion = "Retirá en nuestro depósito o recibí tu pedido por transporte o correo en todo el país.",
