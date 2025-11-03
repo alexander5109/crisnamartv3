@@ -1,0 +1,90 @@
+Caratula:
+	- Proyecto final de Prácticas Profesionalizantes I
+	- Tecnicatura Superior en Análisis de Sistemas
+	- Instituto Superior de Formacion Tecnica Nº 240
+	- Buenos Aires, La Matanza.
+	- Empresa asignada: "Crisnamart"
+	- Por Seling Alexander
+	
+Sobre Crisnamart:
+	- Crisnamart es un distribuidor mayorista de artículos de bazar con más de 40 años de trayectoria en el rubro.
+	- Ubicado en Av. Brig. Gral. Juan Manuel de Rosas 14045/57, González Catán, Provincia de Buenos Aires, cuenta con un amplio depósito propio y una extensa red de proveedores nacionales e importadores.
+	- Su actividad se centra en la venta mayorista y distribución de productos de bazar, plásticos, artículos de cocina y limpieza, atendiendo principalmente a comercios minoristas a nivel provincial y a revendedores de la zona.
+	- La empresa mantiene un trato directo y personalizado con sus clientes, priorizando la confianza y la atención inmediata.
+
+Crisnamart Modelo de Negocio:
+	- [img]
+
+Resumen del proyecto:
+	- El trabajo analiza el sistema actual de Crisnamart y propone mejoras orientadas a la digitalización del negocio.
+	- Como primer paso implementable, se desarrollará una landing page institucional con dominio propio, que redirija al catálogo de Jazz Nube y permita la comunicación directa por WhatsApp.
+	- Se consideran además etapas futuras con mayor automatización, aunque implicarían costos adicionales o reprocesos hasta poder integrarse plenamente con el sistema de integración con Jazz Gestión.
+
+
+Análisis de los problemas:
+	1. Problemas Operativos →  La ausencia de definición formal de roles genera superposición de tareas y dependencia de la gestión diaria para mantener la operación con clientes y proveedores.
+
+	2. Problemas Tecnológicos → El sistema de gestión se utiliza parcialmente, con errores de carga acumulados, convivencia con registros manuales, dificultando trazabilidad y toma de decisiones de largo plazo en base a datos.
+
+	3. Problemas Comerciales → La empresa carece de una presencia digital atractiva y de herramientas para comunicar promociones o novedades de forma masiva, dependiendo casi por completo del contacto individual con cada cliente.
+
+
+Objetivo del proyecto:
+	- Mejorar la gestión y visibilidad de Crisnamart mediante soluciones digitales iniciales que faciliten la comunicación con clientes y la administración de información, sentando las bases para futuras mejoras tecnológicas y comerciales
+
+
+Propuestas de implementación:
+	1. Landing page institucional
+	2. Catálogo dinámico mediante CSV público
+	3. Sistema de pedidos en PDF con base de datos externa
+	4. E-commerce completo integrado con stock y facturación
+
+Propuesta #1 – Landing page institucional:
+	- Web estática con HTML/CSS/JS
+	- Información de la empresa, ubicación, contacto, horarios
+	- Redirección a Jazz Nube para clientes registrados
+	- Costo: dominio .com.ar (hosting gratuito)
+	- Mantenimiento: nulo
+	- Ventaja: implementación inmediata, mejora imagen profesional
+
+Propuesta #2 – Catálogo dinámico CSV
+	- Script que exporta stock desde Jazz a CSV
+	- CSV publicado en repositorio público (GitHub, Google Drive)
+	- Página web hace fetch y renderiza productos
+	- Costo: bajo, solo hosting para las imagenes y .CSV.
+	- Ventaja: actualización simple, bajo costo, sin servidor
+	- Limitación: solo lectura, no genera pedidos automáticos
+
+Propuesta #3 – Sistema de pedidos PDF
+	- Web con backend simple y base de datos externa
+	- Registro/login de clientes
+	- Catálogo dinámico editable vía CSV
+	- Genera pedidos en PDF para cargar manualmente en Jazz
+	- Ventaja: centraliza información de clientes, agiliza pedidos
+	- Limitación: requiere servidor y mínimo mantenimiento
+
+Propuesta #4 – E-commerce completo
+	- Registro de clientes, carrito, pagos y stock automatizado
+	- Integración parcial o futura con Jazz
+	- Ventaja: completa automatización de pedidos y stock
+	- Limitación: alto costo y complejidad, requiere mantenimiento profesional
+
+Tienda online original vs primer prototipo:
+	- [img_before] vs [img_after]
+	- Actual: https://jazznube.com.ar/crisnamart/
+	- Prototipo: https://crisnamart.onrender.com/
+
+Implementacion actual:
+	- Se desarrolló una landing page institucional moderna utilizando Blazor WebAssembly.
+	- El sitio presenta una interfaz adaptable, con secciones de inicio, catálogo de productos, texto institucional y formulario de contacto.
+	- Incluye accesos a comunicación directa con WhatsApp
+	- Permite incorporar un catálogo visual con productos cargados localmente. 
+	- La aplicación funciona de manera estática y offline, pudiendo alojarse sin costo en plataformas como Netlify o GitHub Pages.
+
+Posibles mejoras:
+	- Catálogo dinámico mediante archivo CSV:
+		- Permitiría actualizar los productos directamente desde el sistema actual mediante un archivo exportado.Requiere un servidor con API y base de datos liviana (por ejemplo, MySQL o SQLite) para almacenar información de productos, categorías e imágenes.Costo estimado: aprox. $8.000 – $12.000 anuales (hosting + mantenimiento básico).
+	- Sistema de pedidos con base de datos externa o envío directo:
+		- Los clientes podrían generar pedidos online y recibir un PDF estructurado listo para su carga manual en Jazz Gestión.Puede implementarse sin servidor ni base de datos (enviando los formularios directamente por correo o WhatsApp), aunque sin validaciones ni persistencia.Costo estimado: $0, o el mismo que el punto anterior si se utiliza la base de datos del catálogo.
+	- E-commerce completo integrado con stock y facturación:
+		-Permitiría registrar clientes, actualizar stock en tiempo real y generar comprobantes automáticos.Requiere integración directa con la base de datos de Jazz Gestión y soporte técnico especializado.Costo estimado: variable según alcance (implementación avanzada + mantenimiento mensual).
