@@ -22,7 +22,7 @@ Resumen del proyecto:
 
 
 Análisis de los problemas:
-	1. Problemas Operativos →  La ausencia de definición formal de roles genera superposición de tareas y dependencia de la gestión diaria para mantener la operación con clientes y proveedores.
+	1. Problemas Operativos →  La falta de personal y la ausencia de una definición formal de roles genera superposición de tareas y dependencia de los dueños para mantener la operación con clientes y proveedores.
 
 	2. Problemas Tecnológicos → El sistema de gestión se utiliza parcialmente, con errores de carga acumulados, convivencia con registros manuales, dificultando trazabilidad y toma de decisiones de largo plazo en base a datos.
 
@@ -34,76 +34,59 @@ Objetivo del proyecto:
 
 
 Propuestas de implementación:
-	1. Landing page institucional
-	2. Catálogo dinámico mediante CSV público
-	3. Sistema de pedidos en PDF con base de datos externa
-	4. E-commerce completo integrado con stock y facturación
 
-Propuesta #1 – Landing page institucional:
-	- Página estática sin usuarios, catálogo ni carrito.
-	- Información de la empresa, ubicación, contacto, horarios.
-	- Redirección a e-commerce de Jazz Nube.
-	- Ventajas: 
-		- Implementación inmediata
-		- Mayor presencial digital
-		- Coste minimo
-		- No requiere mantenimiento
-	- Desventajas: 
-		- No resuelve el problema del ecommerce de JazzNube.
-	- Costo: 
-		-$8.500 anual (dominio .com.ar y hosting gratuito).
-
-Propuesta #2 – Sitio web (sin integración a Jazz-Gestión).
-	- Base de datos para registro de clientes y administradores.
-	- Usuario "cliente" crea su propia cuenta, agrega items de catálogo a carrito de compra y genera pedidos.
-	- Usuario "administrador" actualiza catálogo y promociones.
-	- Pedidos exportables como PDF o segun convenencia para su armado. 
-	- Script para exportar productos con stock real desde base de datos de JazzGestion hacia sitio web.
-	- Ventajas: 
-		- Mejor experiencia para el cliente.
-		- Libertad de crear promociones y catálogos.
-		- Permite comenzar a escalar hacia un sistema robusto.
-	- Desventajas: 
-		- Mayor coste de mantenimiento (implica contratar un servidor y mantener el sitio)
-		- Requiere vendedor que actualize el catálogo e ingrese los pedidos en JazzGestion para reduccion de stock y facturación.
-	- Costo: 
-		-$65.000 mensual (cubre costes de dominio, servidor, base de datos, actualizaciones y mantenimiento)
-
-Propuesta #3 – E-commerce completo y paulatina integración o reemplazo de Jazz-Gestión.
-	- Todo lo anterior + registro de pedidos, sincronizacion de stock, facturacion, pagos por plataforma, cuentas corrientas.
-	- Aplicacion de escritorio 
-	- Integración parcial con Jazz o reemplazo completo del sistema utilizando base de datos existente.
-	- Ventaja: 
-	- Limitación: alto costo y complejidad, requiere mantenimiento profesional
-	- Ventajas:
-		-Creacion de un sistema completamente adaptado a las necesidades del negocio.
-		- Sitio web profesional a la altura de los ecomerces modernos.
-		- Facilitaria la gestión de inventario, productos,
-		- Permite generar datos estadisticos para la toma de decisiones.
-		- Mismo costo de mantenimiento que la propuesta anterior.
-	-Desventajas:
-		- Alto costo de implementación y más lenta: requiere diseñar todo de cero. visitas presenciales o copia de la base de datos. 
-	- Costo: 
-		-$65.000 mensual por lo anterior + coste de implementacion segun horas trabajadas.
+🔹 Propuesta #1 – Landing Page Institucional
+	Objetivo: 
+		Presencia online inmediata con inversión mínima.
+	Características:
+		Sitio estático (sin base de datos).
+		Muestra información de la empresa: quiénes somos, contacto, ubicación, horarios.
+		Redirección al e-commerce actual de Jazz Nube.
+		Diseño moderno, adaptable a dispositivos móviles.
+		Posibilidad futura de transformarse en el sitio dinámico de la propuesta 2.
+	Ventajas:
+		Muy bajo costo y mantenimiento nulo.
+		Se puede alojar gratis (GitHub Pages o Netlify).
+		Mejora la imagen profesional y posicionamiento.
+	Costo estimado:
+		💰 $8.000–$10.000 anuales (dominio y pequeñas actualizaciones).
 
 
 
-Tienda online original vs primer prototipo:
+🔹 Propuesta #2 – Sitio Web Dinámico con Integración Parcial a Jazz Gestión
+	Objetivo: 
+		Mejorar la gestión de pedidos mayoristas sin reemplazar el sistema actual.
+	Características:
+		Base de datos propia para clientes, productos y pedidos.
+		Registro de clientes y generación de pedidos en PDF.
+		Panel de administración para cargar catálogo desde archivo CSV exportado de Jazz Gestión.
+		Visualización de pedidos y administración básica (sin facturación).
+	Integración parcial con Jazz:
+		Importación de catálogo (productos, stock, precios) desde Jazz Gestión.
+		Los pedidos generados se imprimen o exportan para cargarse manualmente en Jazz.
+	Ventajas:
+		Mejora inmediata en la comunicación con clientes.
+		Pedidos más claros, uniformes y fáciles de procesar.
+		Catálogo controlado por la empresa (sin depender del soporte de Jazz).
+		Compatible con futuras integraciones o reemplazos.
+	Limitaciones:
+		No hay sincronización automática.
+		Se requiere carga manual de pedidos a Jazz.
+		Requiere un vendedor encargado de actualizar el catálogo
+	Costos estimados:
+		Concepto	Costo
+		Dominio y hosting	$10.000/mes
+		Desarrollo inicial	$200.000
+		Mantenimiento mensual	$30.000
+
+Implementacion actual:
+	- Se desarrolló una landing page institucional moderna utilizando Blazor Web Application de Microsoft.
+	- El sitio presenta una interfaz adaptable, con secciones de inicio, catálogo de productos, texto institucional y formulario de contacto.
+	- Incluye accesos a comunicación directa con WhatsApp
+	- Cuenta con un catálogo estático para prototipo de propuesta #2.
+	- La aplicación funciona de manera estática y offline, pudiendo alojarse sin costo en plataformas como Netlify o GitHub Pages.
+
+Sitio web original vs Prototipo actual:
 	- [img_before] vs [img_after]
 	- Actual: https://jazznube.com.ar/crisnamart/
 	- Prototipo: https://crisnamart.onrender.com/
-
-Implementacion actual:
-	- Se desarrolló una landing page institucional moderna utilizando Blazor WebAssembly.
-	- El sitio presenta una interfaz adaptable, con secciones de inicio, catálogo de productos, texto institucional y formulario de contacto.
-	- Incluye accesos a comunicación directa con WhatsApp
-	- Permite incorporar un catálogo visual con productos cargados localmente. 
-	- La aplicación funciona de manera estática y offline, pudiendo alojarse sin costo en plataformas como Netlify o GitHub Pages.
-
-Posibles mejoras:
-	- Catálogo dinámico mediante archivo CSV:
-		- Permitiría actualizar los productos directamente desde el sistema actual mediante un archivo exportado.Requiere un servidor con API y base de datos liviana (por ejemplo, MySQL o SQLite) para almacenar información de productos, categorías e imágenes.Costo estimado: aprox. $8.000 – $12.000 anuales (hosting + mantenimiento básico).
-	- Sistema de pedidos con base de datos externa o envío directo:
-		- Los clientes podrían generar pedidos online y recibir un PDF estructurado listo para su carga manual en Jazz Gestión.Puede implementarse sin servidor ni base de datos (enviando los formularios directamente por correo o WhatsApp), aunque sin validaciones ni persistencia.Costo estimado: $0, o el mismo que el punto anterior si se utiliza la base de datos del catálogo.
-	- E-commerce completo integrado con stock y facturación:
-		-Permitiría registrar clientes, actualizar stock en tiempo real y generar comprobantes automáticos.Requiere integración directa con la base de datos de Jazz Gestión y soporte técnico especializado.Costo estimado: variable según alcance (implementación avanzada + mantenimiento mensual).
