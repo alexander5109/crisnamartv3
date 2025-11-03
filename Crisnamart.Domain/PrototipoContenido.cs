@@ -87,7 +87,7 @@ public class PrototipoContenido {
 	// -------------------------------- -----------------------  --------------------------------  //
 
 	public static PromoBannerModel GetPromoBannerModelEjemplo() => new() {
-		Titulo = "Promoción Mayorista - Lotes Seleccionados",
+		Titulo = "Promoción Mayorista",
 		Descripcion = "Descuentos especiales por compra por mayor en artículos de bazar. Ideal para reposición de locales y distribuidores.",
 		ImagePath = "images/banner/banner-deal.jpg",
 		ButtonText = "Ver ofertas",
@@ -113,7 +113,7 @@ public class PrototipoContenido {
 
 	public static List<SlidePromocionalModel> GetPublicidadSlides() => [
 		new SlidePromocionalModel {
-			ImagePath = "images/slider/slide-1.jpg",
+			ImagePath = "images/slider/slide1.png",
 			Subtitulo = "Mayorista de artículos de bazar",
 			TituloHtml = "Calidad, trayectoria<br/>y atención personalizada",
 			Descripcion = "Más de 40 años abasteciendo comercios y revendedores con los mejores precios del mercado.",
@@ -121,7 +121,7 @@ public class PrototipoContenido {
 			Link = "#!"
 		},
 		new SlidePromocionalModel {
-			ImagePath = "images/slider/slide-2.jpg",
+			ImagePath = "images/slider/slide2.png",
 			Subtitulo = "Entregas directas y envíos al interior",
 			TituloHtml = "Coordinamos tu pedido<br/>según tu ubicación",
 			Descripcion = "Retirá en nuestro depósito o recibí tu pedido por transporte o correo en todo el país.",
