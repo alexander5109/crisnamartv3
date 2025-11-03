@@ -1,7 +1,62 @@
+V2:
+#Socios Clave
+Proveedores nacionales e importadores
+Contador externo y asesor impositivo
+Soporte técnico de Jazz Gestión
+Familiares involucrados en la operación (apoyo operativo y comercial)
+
+#Actividades Clave
+Selección, compra y recepción de mercadería
+Gestión de stock y reposición
+Atención y gestión de pedidos mayoristas
+Facturación y control de entregas
+Coordinación logística y entregas
+
+#Recursos Clave
+Depósito propio con capacidad de almacenamiento
+Base estable de proveedores
+Sistema Jazz Gestión
+Conocimiento técnico y comercial del dueño
+Relación de confianza con clientes y proveedores
+
+#Propuesta de Valor
+Distribuidor mayorista de artículos de bazar con +40 años de trayectoria
+Amplio y variado stock nacional e importado
+Atención personalizada y relaciones de confianza
+Flexibilidad comercial y entregas rápidas
+Conocimiento profundo del mercado mayorista
+
+#Relación con el Cliente
+Trato cercano y personalizado
+Comunicación directa vía WhatsApp Business, llamadas y visitas
+Sin seguimiento automatizado; basado en relaciones personales
+
+#Canales
+Atención presencial en local/depósito
+WhatsApp como canal principal
+Página web en Jazz Nube para clientes registrados
+Entregas locales directas y envíos por transportes/couriers
+
+#Segmentos de Mercado
+Comercios minoristas y distribuidores mayoristas de bazar
+Clientes del interior y negocios de cercanía
+Clientes históricos y nuevos clientes por recomendación
+
+#Estructura de Costos
+Compra de mercadería
+Mantenimiento de transporte y logística
+Mantenimiento de Jazz Gestión
+Servicios fijos (electricidad, internet, seguridad)
+Retribución a familiares activos en la operación
+Impuestos y cargas fiscales
+
+#Fuentes de Ingresos
+Venta mayorista de artículos de bazar
+Ventas minoristas ocasionales
 
 
 
-
+V1:
 Socios Clave:
 	- Familiares involucrados en la operación (hermana, madre, cuñado).  
 	- Proveedores nacionales e importadores.  
