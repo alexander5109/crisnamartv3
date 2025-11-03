@@ -40,34 +40,53 @@ Propuestas de implementación:
 	4. E-commerce completo integrado con stock y facturación
 
 Propuesta #1 – Landing page institucional:
-	- Web estática con HTML/CSS/JS
-	- Información de la empresa, ubicación, contacto, horarios
-	- Redirección a Jazz Nube para clientes registrados
-	- Costo: dominio .com.ar (hosting gratuito)
-	- Mantenimiento: nulo
-	- Ventaja: implementación inmediata, mejora imagen profesional
+	- Página estática sin usuarios, catálogo ni carrito.
+	- Información de la empresa, ubicación, contacto, horarios.
+	- Redirección a e-commerce de Jazz Nube.
+	- Ventajas: 
+		- Implementación inmediata
+		- Mayor presencial digital
+		- Coste minimo
+		- No requiere mantenimiento
+	- Desventajas: 
+		- No resuelve el problema del ecommerce de JazzNube.
+	- Costo: 
+		-$8.500 anual (dominio .com.ar y hosting gratuito).
 
-Propuesta #2 – Catálogo dinámico CSV
-	- Script que exporta stock desde Jazz a CSV
-	- CSV publicado en repositorio público (GitHub, Google Drive)
-	- Página web hace fetch y renderiza productos
-	- Costo: bajo, solo hosting para las imagenes y .CSV.
-	- Ventaja: actualización simple, bajo costo, sin servidor
-	- Limitación: solo lectura, no genera pedidos automáticos
+Propuesta #2 – Sitio web (sin integración a Jazz-Gestión).
+	- Base de datos para registro de clientes y administradores.
+	- Usuario "cliente" crea su propia cuenta, agrega items de catálogo a carrito de compra y genera pedidos.
+	- Usuario "administrador" actualiza catálogo y promociones.
+	- Pedidos exportables como PDF o segun convenencia para su armado. 
+	- Script para exportar productos con stock real desde base de datos de JazzGestion hacia sitio web.
+	- Ventajas: 
+		- Mejor experiencia para el cliente.
+		- Libertad de crear promociones y catálogos.
+		- Permite comenzar a escalar hacia un sistema robusto.
+	- Desventajas: 
+		- Mayor coste de mantenimiento (implica contratar un servidor y mantener el sitio)
+		- Requiere vendedor que actualize el catálogo e ingrese los pedidos en JazzGestion para reduccion de stock y facturación.
+	- Costo: 
+		-$65.000 mensual (cubre costes de dominio, servidor, base de datos, actualizaciones y mantenimiento)
 
-Propuesta #3 – Sistema de pedidos PDF
-	- Web con backend simple y base de datos externa
-	- Registro/login de clientes
-	- Catálogo dinámico editable vía CSV
-	- Genera pedidos en PDF para cargar manualmente en Jazz
-	- Ventaja: centraliza información de clientes, agiliza pedidos
-	- Limitación: requiere servidor y mínimo mantenimiento
-
-Propuesta #4 – E-commerce completo
-	- Registro de clientes, carrito, pagos y stock automatizado
-	- Integración parcial o futura con Jazz
-	- Ventaja: completa automatización de pedidos y stock
+Propuesta #3 – E-commerce completo y paulatina integración o reemplazo de Jazz-Gestión.
+	- Todo lo anterior + registro de pedidos, sincronizacion de stock, facturacion, pagos por plataforma, cuentas corrientas.
+	- Aplicacion de escritorio 
+	- Integración parcial con Jazz o reemplazo completo del sistema utilizando base de datos existente.
+	- Ventaja: 
 	- Limitación: alto costo y complejidad, requiere mantenimiento profesional
+	- Ventajas:
+		-Creacion de un sistema completamente adaptado a las necesidades del negocio.
+		- Sitio web profesional a la altura de los ecomerces modernos.
+		- Facilitaria la gestión de inventario, productos,
+		- Permite generar datos estadisticos para la toma de decisiones.
+		- Mismo costo de mantenimiento que la propuesta anterior.
+	-Desventajas:
+		- Alto costo de implementación y más lenta: requiere diseñar todo de cero. visitas presenciales o copia de la base de datos. 
+	- Costo: 
+		-$65.000 mensual por lo anterior + coste de implementacion segun horas trabajadas.
+
+
 
 Tienda online original vs primer prototipo:
 	- [img_before] vs [img_after]
