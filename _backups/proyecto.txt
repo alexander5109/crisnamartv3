@@ -1,3 +1,158 @@
+
+
+
+
+Socios Clave:
+	- Familiares involucrados en la operación (hermana, madre, cuñado).  
+	- Proveedores nacionales e importadores.  
+	- Soporte técnico del sistema Jazz Gestión (Natural Software).  
+	- Contador externo y asesor impositivo.   
+
+Actividades clave:
+	- Selección, compra y recepción de mercadería.  
+	- Mantenimiento de stock y reposición en el showroom.  
+	- Atención y gestión de pedidos mayoristas.  
+	- Facturación y control de entregas.  
+	- Coordinación logística y reparto local.  
+	- Comunicación personal con clientes y proveedores.  
+
+Recursos clave:
+	- Depósito propio con gran capacidad de almacenamiento.  
+	- Base estable de más de 50 proveedores.  
+	- Sistema Jazz Gestión (facturación, stock, clientes).  
+	- Conocimiento técnico y comercial del dueño.  
+	- Capital relacional y confianza construida a lo largo de los años.  
+	- Apoyo operativo y comercial del entorno familiar.  
+
+Propuesta de valor:
+	- Distribuidor mayorista de artículos de bazar con más de 40 años de trayectoria.  
+	- Amplio y variado stock de productos nacionales e importados.  
+	- Atención personalizada y relaciones de confianza con clientes y proveedores.  
+	- Flexibilidad comercial: acuerdos directos, entregas rápidas y soluciones a medida.  
+	- Experiencia y conocimiento profundo del mercado mayorista de bazar.  
+
+Relación con el cliente:
+	- Trato cercano, personal y basado en confianza.  
+	- Comunicación directa (mensajes de voz, llamadas, visitas).  
+	- Sin automatización de contactos ni seguimiento sistematizado.  
+
+Canales:
+	- Atención presencial en el local/depósito.  
+	- Comunicación directa vía WhatsApp (principal canal de contacto).  
+	- Página web en Jazz Nube (carrito para clientes registrados).  
+	- Entregas directas realizadas por el dueño a clientes locales.  
+	- Envíos a través de transportes y couriers para clientes del interior. 
+
+Segmentación de mercado:
+	- Comercios minoristas y distribuidores mayoristas de bazar. 
+	- Clientes del interior del país.
+	- Negocios de cercanía (almacenes, regalerías, bazares) que hacen reposición frecuente. 
+	- Clientes históricos con relaciones personales consolidadas. 
+	- Nuevos clientes mayoristas captados por recomendación o contacto directo. 
+
+Estructura de costos:
+	- Compra de mercadería (principal costo operativo).  
+	- Transporte y logística (combustible, mantenimiento de vehículo).  
+	- Mantenimiento del sistema Jazz Gestión (licencia, soporte y actualizaciones).  
+	- Servicios fijos (electricidad, internet, seguridad).  
+	- Retribución a integrantes familiares activos en la operación (sin empleados externos).  
+	- Impuestos y cargas fiscales. 
+
+Fuente de ingresos:
+	- Venta mayorista de artículos de bazar.  
+	- Ventas presenciales minoristas sólo en casos excepcionales (mínimo de compra). 
+
+
+
+
+
+
+
+Slide 1 – Carátula
+* Título: Proyecto Final – Prácticas Profesionalizantes I
+* Carrera: Tecnicatura Superior en Análisis de Sistemas
+* Instituto: ISFT Nº 240, La Matanza, Buenos Aires
+* Empresa: Crisnamart
+* Autor: Alexander Seling
+* [Placeholder: logo Crisnamart o imagen alusiva a bazar]
+
+Slide 2 – Sobre Crisnamart
+* Distribuidor mayorista, +40 años
+* Ubicación: González Catán, BA
+* Venta de bazar, plásticos, cocina, limpieza
+* Atención personalizada a clientes
+* [Placeholder: mapa + almacén + iconos de clientes]
+
+Slide 3 – Modelo de negocio
+* Flujo resumido: Proveedores → Crisnamart → Comercios minoristas → Clientes
+* Enfoque: distribución mayorista
+* [Placeholder: diagrama simple con flechas e iconos]
+
+Slide 4 – Resumen del proyecto
+* Analiza sistema actual y propone digitalización progresiva
+* Paso inicial: Landing page + redirección a Jazz Nube + WhatsApp
+* Etapas futuras: automatización parcial con integración a Jazz Gestión
+* [Placeholder: flecha “actual → digital futuro”]
+
+Slide 5 – Problemas detectados
+* Operativos: roles difusos, tareas duplicadas, dependencia de dueños
+* Tecnológicos: sistema parcial, errores de carga, registros manuales
+* Comerciales: sin presencia digital ni comunicación masiva
+* [Placeholder: iconos alerta/computadora/megáfono]
+
+Slide 6 – Objetivo del proyecto
+* Mejorar gestión y visibilidad mediante soluciones digitales iniciales
+* Base para futuras mejoras tecnológicas y comerciales
+* [Placeholder: icono objetivo/meta]
+
+Slide 7 – Propuesta 1: Landing Page
+* Objetivo: presencia online inmediata, bajo costo
+* Características:
+  * Sitio estático, info empresa, redirección Jazz Nube, adaptativo
+* Ventajas: bajo costo, mantenimiento nulo, mejora imagen profesional
+* Costo: $8.000–$10.000 anuales
+* [Placeholder: mockup landing page + icono móvil]
+
+Slide 8 – Propuesta 2: Sitio dinámico + integración parcial
+* Objetivo: mejorar gestión de pedidos sin reemplazar sistema actual
+* Características:
+  * Base de datos: clientes, productos, pedidos
+  * Registro clientes + PDF
+  * Panel administración + catálogo CSV
+* Integración parcial Jazz: importación catálogo, exportación pedidos
+* Ventajas: comunicación clara, pedidos uniformes, base para futuras integraciones
+* Limitaciones: sin sincronización automática, requiere carga manual
+* Costos:
+  * Dominio/hosting: $10.000/mes
+  * Desarrollo inicial: $200.000
+  * Mantenimiento mensual: $30.000
+* [Placeholder: diagrama flujo “Jazz Gestión → sitio → cliente” + iconos base de datos/PDF]
+
+Slide 9 – Implementación actual
+* Landing page moderna con Blazor Web Application
+* Secciones: inicio, catálogo, texto institucional, contacto
+* Catálogo estático (prototipo Propuesta 2)
+* Alojamiento gratis
+* [Placeholder: screenshot antes vs. después, flecha “mejora”]
+
+Slide 10 – Sitios
+* Original: https://jazznube.com.ar/crisnamart/
+* Prototipo: https://crisnamart.onrender.com
+* [Placeholder: screenshots de ambos sitios lado a lado]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Caratula:
 	- Proyecto final de Prácticas Profesionalizantes I
 	- Tecnicatura Superior en Análisis de Sistemas
